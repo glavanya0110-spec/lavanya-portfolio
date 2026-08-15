@@ -11,11 +11,10 @@ buttons.forEach((button) => {
     cards.forEach((card) => {
       const categories = card.dataset.cat || "";
 
-      if (filter === "all" || categories.includes(filter)) {
-        card.classList.remove("hidden-card");
-      } else {
-        card.classList.add("hidden-card");
-      }
+      card.classList.toggle(
+        "hidden-card",
+        !(filter === "all" || categories.includes(filter))
+      );
     });
   });
 });
