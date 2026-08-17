@@ -1,20 +1,23 @@
-const buttons = document.querySelectorAll(".filter");
-const cards = document.querySelectorAll(".project-card");
+// Simple filter for portfolio cards
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".project-card");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    buttons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
 
-    const filter = button.dataset.filter;
+            const filter = btn.getAttribute("data-filter");
 
-    cards.forEach((card) => {
-      const categories = card.dataset.cat || "";
-
-      card.classList.toggle(
-        "hidden-card",
-        !(filter === "all" || categories.includes(filter))
-      );
+            cards.forEach(card => {
+                const tech = card.getAttribute("data-tech");
+                if (filter === "all" || tech === filter) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
     });
-  });
 });
