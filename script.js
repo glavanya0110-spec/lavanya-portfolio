@@ -1,23 +1,38 @@
-// Simple filter for portfolio cards
 document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".project-card");
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            buttons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
+  // Smooth page fade-in
+  document.body.classList.add("loaded");
 
-            const filter = btn.getAttribute("data-filter");
 
-            cards.forEach(card => {
-                const tech = card.getAttribute("data-tech");
-                if (filter === "all" || tech === filter) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        });
+  // Add a small scroll effect to the header
+  const header = document.querySelector(".site-header");
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 20) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+
+  });
+
+
+  // Small hover animation for project/cards
+  const cards = document.querySelectorAll(
+    ".card, .mini-card, .tcard, .featured, .project-card"
+  );
+
+  cards.forEach((card) => {
+
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-4px)";
     });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0)";
+    });
+
+  });
+
 });
