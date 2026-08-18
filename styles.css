@@ -203,11 +203,23 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
   box-shadow: none !important;
 }
 
+/* Keep About navigation in normal document flow so it never covers content. */
+body.about-page .about-header {
+  position: relative !important;
+  top: auto !important;
+  z-index: 100 !important;
+}
+
 body:not(.dark-mode) .home-header,
 .about-page:not(.dark-mode) .about-header,
 .portfolio-body:not(.dark-mode) .portfolio-header {
   background: rgba(237, 239, 249, .88) !important;
   backdrop-filter: blur(14px);
+}
+
+body.about-page:not(.dark-mode) header.about-header {
+  background: rgba(237, 239, 249, .98) !important;
+  backdrop-filter: none !important;
 }
 
 body.dark-mode .home-header,
