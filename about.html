@@ -26,6 +26,7 @@
     .about-page{background:#090d1a;color:#f8fafc;overflow-x:hidden}
     .about-page .container{width:min(1120px,92%);margin-inline:auto}
     .about-header{position:sticky;top:0;z-index:50;background:rgba(9,13,26,.88);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px)}
+    body.about-page .about-header{border:0!important;border-bottom:0!important;box-shadow:none!important;outline:0!important}
     .about-nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
     .about-brand{display:flex;align-items:center;gap:6px;font-size:1.28rem;font-weight:800}
     .brand-last{color:#7784ff}.brand-dot{width:8px;height:8px;border-radius:50%;background:#31d67b}
@@ -88,7 +89,7 @@
 
     /* Light mode */
     .about-page:not(.dark-mode){background:#f5f5fb;color:#111827}
-    .about-page:not(.dark-mode) .about-header{background:rgba(245,245,251,.94);border-bottom:none;box-shadow:none}
+    .about-page:not(.dark-mode) .about-header{background:rgba(245,245,251,.94);border:0!important;border-bottom:0!important;box-shadow:none!important}
     .about-page:not(.dark-mode) .about-brand{color:#111827}
     .about-page:not(.dark-mode) .about-links a{color:#5d6678}
     .about-page:not(.dark-mode) .about-links a:hover,
@@ -98,7 +99,7 @@
     .about-page:not(.dark-mode) .about-stars{background-image:radial-gradient(circle,#6674a0 1px,transparent 1.5px);opacity:.13}
     .about-page:not(.dark-mode) .stars-two{opacity:.08}
     .about-page:not(.dark-mode) .about-role{color:#252b38}
-    .about-page:not(.dark-mode) .about-description{color:#343941;font-weight:400;line-height:1.65}
+    .about-page:not(.dark-mode) .about-description{color:#1f2937;font-weight:500;line-height:1.65}
     .about-page:not(.dark-mode) .about-info-tag{border-color:#cdd4f5;background:#eef1ff;color:#3e4860}
     .about-page:not(.dark-mode) .about-social-links a,
     .about-page:not(.dark-mode) .connect-button{border-color:#d6dce8;background:#fff;color:#273043}
