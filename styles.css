@@ -3,7 +3,14 @@
     radial-gradient(circle at 88% 70%, rgba(118, 174, 224, .22), transparent 33%),
     radial-gradient(circle at 55% 48%, rgba(202, 184, 241, .18), transparent 38%),
     linear-gradient(135deg, #ececf8 0%, #e7ebf6 48%, #eef0f8 100%);
-  --page-dark: #090d1a;
+  --page-dark: radial-gradient(circle at 18% 24%, rgba(44, 66, 86, .14), transparent 31%),
+    radial-gradient(circle at 82% 76%, rgba(64, 50, 118, .12), transparent 34%),
+    #080d12;
+  --dark-surface: #10171f;
+  --dark-surface-soft: #141c25;
+  --dark-border: #293744;
+  --dark-text: #f7f9fb;
+  --dark-muted: #b7c0ca;
   --ink: #1e2633;
   --muted: #667085;
   --accent: #6674ed;
@@ -30,6 +37,225 @@ body {
 body.dark-mode {
   color-scheme: dark;
   background: var(--page-dark) !important;
+  color: var(--dark-text) !important;
+}
+
+/* One dark-mode system shared by Home, About, and Portfolio. */
+body.dark-mode .home-main,
+body.about-page.dark-mode .about-main,
+body.about-page.dark-mode .about-space,
+body.portfolio-body.dark-mode .portfolio-page,
+body.portfolio-body.dark-mode .portfolio-effects {
+  background: var(--page-dark) !important;
+}
+
+body.dark-mode .home-header,
+body.about-page.dark-mode .about-header,
+body.portfolio-body.dark-mode .portfolio-header {
+  background: rgba(8, 13, 18, .96) !important;
+  color: var(--dark-text) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+body.dark-mode .home-links a,
+body.about-page.dark-mode .about-links a,
+body.portfolio-body.dark-mode .portfolio-links a {
+  color: var(--dark-muted) !important;
+}
+
+body.dark-mode .home-links a:hover,
+body.dark-mode .home-links a.active,
+body.about-page.dark-mode .about-links a:hover,
+body.about-page.dark-mode .about-links a.active,
+body.portfolio-body.dark-mode .portfolio-links a:hover,
+body.portfolio-body.dark-mode .portfolio-links a.active {
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+body.dark-mode .theme-toggle,
+body.about-page.dark-mode .theme-toggle,
+body.portfolio-body.dark-mode .theme-toggle {
+  background: var(--dark-surface) !important;
+  border-color: var(--dark-border) !important;
+  color: #fff !important;
+}
+
+body.dark-mode .home-tag,
+body.about-page.dark-mode .about-info-tag,
+body.portfolio-body.dark-mode .filter-button {
+  background: var(--dark-surface) !important;
+  border-color: var(--dark-border) !important;
+  color: #d2d9e6 !important;
+}
+
+body.about-page.dark-mode .build-card,
+body.about-page.dark-mode .journey-card,
+body.about-page.dark-mode .education-card,
+body.about-page.dark-mode .certification-card,
+body.portfolio-body.dark-mode .repo-card,
+body.portfolio-body.dark-mode .repo-card.featured,
+body.portfolio-body.dark-mode .github-grid .repo-card {
+  background: rgba(15, 22, 30, .94) !important;
+  color: var(--dark-text) !important;
+}
+
+body.about-page.dark-mode .about-description,
+body.about-page.dark-mode .journey-card p,
+body.about-page.dark-mode .education-card p,
+body.about-page.dark-mode .certification-card p,
+body.portfolio-body.dark-mode .repo-description,
+body.portfolio-body.dark-mode .portfolio-intro p {
+  color: var(--dark-muted) !important;
+}
+
+body.about-page.dark-mode .about-connect-section {
+  background: linear-gradient(135deg, #0c131a, #111823 52%, #0d171d) !important;
+  border-top-color: var(--dark-border) !important;
+}
+
+/* Akshay-inspired night presentation, applied consistently to all pages. */
+body.dark-mode,
+body.about-page.dark-mode,
+body.portfolio-body.dark-mode {
+  background: #090e14 !important;
+}
+
+body.dark-mode .home-main,
+body.about-page.dark-mode .about-main,
+body.about-page.dark-mode .about-space,
+body.portfolio-body.dark-mode .portfolio-page,
+body.portfolio-body.dark-mode .portfolio-effects {
+  background: radial-gradient(circle at 78% 72%, rgba(52, 42, 112, .1), transparent 28%), #090e14 !important;
+}
+
+body.dark-mode .home-header,
+body.about-page.dark-mode .about-header,
+body.portfolio-body.dark-mode .portfolio-header {
+  background: rgba(9, 14, 20, .93) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+body.dark-mode .home-links a,
+body.about-page.dark-mode .about-links a,
+body.portfolio-body.dark-mode .portfolio-links a {
+  position: relative;
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: #cbd2dc !important;
+}
+
+body.dark-mode .home-links a.active,
+body.about-page.dark-mode .about-links a.active,
+body.portfolio-body.dark-mode .portfolio-links a.active {
+  color: #fff !important;
+}
+
+body.dark-mode .home-links a.active::after,
+body.about-page.dark-mode .about-links a.active::after,
+body.portfolio-body.dark-mode .portfolio-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  bottom: 1px;
+  height: 2px;
+  border-radius: 999px;
+  background: #7b70ff;
+  box-shadow: 0 0 9px rgba(123, 112, 255, .72);
+}
+
+body.dark-mode .home-title,
+body.about-page.dark-mode .about-name,
+body.portfolio-body.dark-mode .portfolio-intro h1 {
+  color: #f8fafc !important;
+}
+
+body.about-page.dark-mode .outline-name {
+  color: transparent !important;
+  -webkit-text-stroke-color: #7b70ff !important;
+}
+
+body.portfolio-body.dark-mode .repo-card,
+body.portfolio-body.dark-mode .repo-card.featured,
+body.portfolio-body.dark-mode .github-grid .repo-card {
+  background: rgba(10, 17, 23, .72) !important;
+  border: 0 !important;
+  border-top: 2px solid #38d7e5 !important;
+  box-shadow: 0 -5px 22px rgba(56, 215, 229, .08) !important;
+}
+
+body.portfolio-body.dark-mode .featured-grid .repo-card:nth-child(2),
+body.portfolio-body.dark-mode .github-grid .repo-card:nth-child(even) {
+  border-top-color: #57dc83 !important;
+  box-shadow: 0 -5px 22px rgba(87, 220, 131, .07) !important;
+}
+
+body.portfolio-body.dark-mode .repo-card h3,
+body.portfolio-body.dark-mode .repo-card.featured h3 {
+  color: #42d3e3 !important;
+}
+
+body.portfolio-body.dark-mode .featured-grid .repo-card:nth-child(2) h3,
+body.portfolio-body.dark-mode .github-grid .repo-card:nth-child(even) h3 {
+  color: #62d98b !important;
+}
+
+body.portfolio-body.dark-mode .repo-topic {
+  border-color: rgba(59, 210, 226, .4) !important;
+  background: rgba(29, 118, 134, .3) !important;
+  color: #bdf7fb !important;
+}
+
+body.portfolio-body.dark-mode .repo-link:not(.secondary) {
+  background: #3ec9db !important;
+  color: #061014 !important;
+  box-shadow: 0 0 18px rgba(62, 201, 219, .18);
+}
+
+body.about-page.dark-mode .build-card,
+body.about-page.dark-mode .journey-card,
+body.about-page.dark-mode .education-card,
+body.about-page.dark-mode .certification-card {
+  background: rgba(10, 17, 23, .72) !important;
+  border-color: rgba(64, 206, 222, .25) !important;
+  box-shadow: none !important;
+}
+
+body.about-page.dark-mode .section-heading h2 {
+  border-bottom-color: #48d2df !important;
+}
+
+/* Small CSS planet used only as quiet night decoration. */
+body.about-page.dark-mode .about-space::after,
+body.portfolio-body.dark-mode .portfolio-effects::after {
+  content: "";
+  position: absolute;
+  right: 7%;
+  bottom: 9%;
+  width: 92px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: .38;
+  background:
+    radial-gradient(circle at 36% 34%, rgba(255,255,255,.32) 0 2px, transparent 3px),
+    radial-gradient(circle at 58% 58%, rgba(12,18,35,.35) 0 5px, transparent 6px),
+    radial-gradient(circle at 42% 40%, #7569e8, #322b84 65%, #171537 100%);
+  box-shadow: 0 0 0 12px rgba(105, 91, 231, .1), 0 0 38px rgba(94, 77, 224, .25);
+}
+
+body.about-page.dark-mode .about-space::before,
+body.portfolio-body.dark-mode .portfolio-effects::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: calc(7% - 18px);
+  bottom: calc(9% + 40px);
+  width: 128px;
+  height: 12px;
+  border: 2px solid rgba(138, 123, 255, .55);
+  border-radius: 50%;
+  transform: rotate(-12deg);
 }
 
 a, button { -webkit-tap-highlight-color: transparent; }
@@ -244,7 +470,7 @@ body.about-page:not(.dark-mode) header.about-header {
 body.dark-mode .home-header,
 .about-page.dark-mode .about-header,
 .portfolio-body.dark-mode .portfolio-header {
-  background: rgba(9, 13, 26, .88) !important;
+  background: rgba(8, 13, 18, .96) !important;
   backdrop-filter: blur(14px);
 }
 
