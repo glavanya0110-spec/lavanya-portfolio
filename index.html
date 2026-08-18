@@ -29,7 +29,7 @@
 
     body{
       font-family:"Manrope",Arial,sans-serif;
-      background:#f8f7f4;
+      background:radial-gradient(circle at 15% 18%,rgba(160,145,255,.16),transparent 29%),radial-gradient(circle at 86% 72%,rgba(187,205,255,.18),transparent 31%),linear-gradient(135deg,#f7f6fc 0%,#f0f1fa 52%,#f8f7fc 100%);
       color:#181818;
       transition:.3s ease;
     }
@@ -48,7 +48,7 @@
     /* HEADER */
 
     .home-header{
-      background:#f8f7f4;
+      background:transparent;
       transition:.3s ease;
     }
 
@@ -143,20 +143,20 @@
 
       overflow:hidden;
 
-      background:#f8f7f4;
+      background:transparent;
     }
 
     .home-hero{
       width:100%;
 
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1.08fr .92fr;
 
       align-items:center;
 
-      gap:65px;
+      gap:54px;
 
-      padding:35px 0 55px;
+      padding:42px 0 58px;
 
       position:relative;
       z-index:3;
@@ -173,7 +173,7 @@
 
       gap:13px;
 
-      font-size:clamp(54px,5.8vw,82px);
+      font-size:clamp(50px,5.2vw,74px);
 
       line-height:.94;
 
@@ -192,13 +192,28 @@
       color:#fff;
     }
 
+    .name-arrows{
+      display:flex;
+      align-items:center;
+      gap:1px;
+      margin-left:2px;
+      color:#5967dc;
+      font-size:clamp(28px,3vw,42px);
+      letter-spacing:-.28em;
+      transform:translateY(4px);
+    }
+
+    .name-arrows span:last-child{
+      color:#a7aeee;
+    }
+
     .home-role{
       margin:18px 0 0;
 
       font-size:17px;
       font-weight:500;
 
-      color:#333;
+      color:#353849;
     }
 
 
@@ -223,10 +238,10 @@
     .home-tag{
       padding:8px 12px;
 
-      border:1px solid #ddd;
+      border:1px solid #d9dbea;
       border-radius:999px;
 
-      background:#fff;
+      background:rgba(255,255,255,.66);
 
       color:#444;
 
@@ -402,7 +417,7 @@
 
       text-align:center;
 
-      border:5px solid #f8f7f4;
+      border:5px solid #f3f3fa;
 
       z-index:5;
 
@@ -491,6 +506,11 @@
 
     body.dark-mode .experience-circle{
       border-color:#101116;
+    }
+
+    body:not(.dark-mode) .home-header{
+      border:0;
+      box-shadow:none;
     }
 
 
@@ -801,13 +821,11 @@
   <span>▶</span>
 </span>
 
-</span>
-
       </h1>
 
 
       <p class="home-role">
-        Data Engineer
+        Data Engineer · Building Reliable Data Systems
       </p>
 
 
