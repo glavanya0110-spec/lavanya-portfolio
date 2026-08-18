@@ -9,9 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    body.portfolio-body{margin:0;font-family:"Manrope",Arial,sans-serif;background:radial-gradient(circle at 12% 18%,rgba(115,143,226,.18),transparent 31%),radial-gradient(circle at 88% 38%,rgba(162,137,224,.18),transparent 34%),linear-gradient(135deg,#f1f5fb 0%,#ececfa 52%,#f5f1fa 100%);color:#111827;transition:.3s ease}
+    body.portfolio-body{margin:0;font-family:"Manrope",Arial,sans-serif;background:radial-gradient(circle at 15% 18%,rgba(160,145,255,.16),transparent 29%),radial-gradient(circle at 86% 72%,rgba(187,205,255,.18),transparent 31%),linear-gradient(135deg,#f7f6fc 0%,#f0f1fa 52%,#f8f7fc 100%);color:#111827;transition:.3s ease}
+    .portfolio-effects{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+    .portfolio-stars{position:absolute;inset:0;background-image:radial-gradient(circle,#6f79a8 1px,transparent 1.5px);background-size:76px 76px;opacity:.12;animation:portfolioTwinkle 4s ease-in-out infinite alternate}
+    .portfolio-stars.two{background-size:131px 131px;background-position:33px 45px;opacity:.07}
+    .portfolio-rocket{position:absolute;font-size:18px;opacity:.28;filter:saturate(.85)}
+    .portfolio-rocket.one{left:-45px;bottom:12%;transform:rotate(35deg);animation:portfolioRocketOne 16s linear infinite}
+    .portfolio-rocket.two{right:-45px;top:24%;font-size:15px;transform:rotate(-140deg);animation:portfolioRocketTwo 21s linear infinite}
+    @keyframes portfolioTwinkle{from{opacity:.07}to{opacity:.18}}
+    @keyframes portfolioRocketOne{from{left:-45px;bottom:10%}to{left:105%;bottom:72%}}
+    @keyframes portfolioRocketTwo{from{right:-45px;top:18%}to{right:105%;top:72%}}
     .portfolio-body .container{width:min(1120px,92%);margin-inline:auto}
-    .portfolio-header{position:sticky!important;top:0!important;z-index:1000!important;background:rgba(247,247,251,.94)!important;backdrop-filter:blur(14px)}
+    .portfolio-header{position:sticky!important;top:0!important;z-index:1000!important;background:rgba(247,247,251,.88)!important;backdrop-filter:blur(14px)}
     .portfolio-nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
     .portfolio-brand{display:flex;align-items:center;gap:6px;font-size:1.28rem;font-weight:800}
     .portfolio-brand .brand-last{color:#6674ed}.portfolio-brand .brand-dot{width:8px;height:8px;border-radius:50%;background:#31bd6b}
@@ -19,7 +28,7 @@
     .portfolio-links a{padding:9px 14px;border-radius:9px;color:#5d6678;font-size:.9rem;font-weight:700}
     .portfolio-links a:hover,.portfolio-links a.active{background:#6674ed;color:#fff}
     .theme-toggle{width:40px;height:40px;border:1px solid #d8deea;border-radius:10px;background:#fff;color:#111827;cursor:pointer}
-    .portfolio-page{position:relative!important;inset:auto!important;transform:none!important;min-height:calc(100vh - 74px);margin:0!important;padding:0!important;background:transparent}
+    .portfolio-page{position:relative!important;z-index:1;inset:auto!important;transform:none!important;min-height:calc(100vh - 74px);margin:0!important;padding:0!important;background:transparent}
     .portfolio-page .page-inner{padding:58px 0 82px}
     .portfolio-intro{position:relative!important;inset:auto!important;transform:none!important;width:min(900px,100%);text-align:center;margin:0 auto 58px!important;padding:0!important}
     .portfolio-eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:15px;color:#6674ed;font-family:"Inter",Arial,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.2em}
@@ -78,6 +87,9 @@
     .repo-actions{display:flex;gap:8px}.repo-link{padding:9px 12px;border-radius:10px;background:#6674ed;color:#fff;font-family:"Inter",Arial,sans-serif;font-size:.75rem;font-weight:600}.repo-link.secondary{border:1px solid #d9dbea;background:#fff;color:#4f596b}
     .projects-status{grid-column:1/-1;padding:38px;border:1px dashed #ced3df;border-radius:18px;text-align:center;color:#6b7280;font-family:"Inter",Arial,sans-serif}
     body.dark-mode{background:#090d1a;color:#f8fafc}
+    body.dark-mode .portfolio-stars{background-image:radial-gradient(circle,#fff 1px,transparent 1.6px);opacity:.3}
+    body.dark-mode .portfolio-stars.two{opacity:.16}
+    body.dark-mode .portfolio-rocket{opacity:.72}
     body.dark-mode .portfolio-header{background:rgba(9,13,26,.82);backdrop-filter:blur(14px)}
     body.dark-mode .portfolio-brand .brand-first{color:#fff}
     body.dark-mode .portfolio-links a{color:#b7bfd0}
@@ -109,6 +121,12 @@
   </style>
 </head>
 <body class="portfolio-body">
+<div class="portfolio-effects" aria-hidden="true">
+  <div class="portfolio-stars"></div>
+  <div class="portfolio-stars two"></div>
+  <div class="portfolio-rocket one">🚀</div>
+  <div class="portfolio-rocket two">🚀</div>
+</div>
 <header class="portfolio-header">
   <div class="container portfolio-nav">
     <a class="portfolio-brand" href="index.html">
