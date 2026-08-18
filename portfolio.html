@@ -35,6 +35,13 @@
     .filter-button.active{border-color:#6674ed;background:#6674ed;color:#fff}
     .github-grid{position:relative!important;inset:auto!important;transform:none!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
     .repo-card{position:relative!important;inset:auto!important;transform:none!important;display:flex;flex-direction:column;width:100%!important;min-height:300px;margin:0!important;border:1px solid #dedfeb;border-radius:20px;background:rgba(255,255,255,.84);overflow:hidden;box-shadow:0 18px 42px rgba(70,72,112,.08)}
+    .repo-card.featured{grid-column:1/-1;min-height:340px;border-color:#9bb7cc}
+    .repo-card.featured:nth-child(2){border-color:#8fc6a6}
+    .repo-card.featured .repo-content{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(230px,.65fr);column-gap:34px;align-items:center}
+    .repo-card.featured .repo-meta,.repo-card.featured h3,.repo-card.featured .repo-description,.repo-card.featured .repo-topics{grid-column:1}
+    .repo-card.featured .repo-footer{grid-column:2;grid-row:1/5;align-self:stretch;flex-direction:column;align-items:stretch;justify-content:flex-end;margin:0;padding:22px;border:1px solid #e2e7ee;border-radius:16px;background:rgba(238,244,248,.72)}
+    .repo-card.featured:nth-child(2) .repo-footer{background:rgba(232,246,236,.74)}
+    .repo-card.featured .repo-actions{flex-direction:column}.repo-card.featured .repo-link{text-align:center}
     .repo-card-top{height:38px;display:flex;align-items:center;gap:6px;padding:0 17px;border-bottom:1px solid #e8e8f0;background:rgba(247,247,251,.82)}
     .window-dot{width:9px;height:9px;border-radius:50%}.window-dot.red{background:#ef7474}.window-dot.yellow{background:#e9bd55}.window-dot.green{background:#72bf72}
     .repo-content{position:static!important;transform:none!important;display:flex;flex:1;flex-direction:column;padding:22px}
@@ -67,7 +74,7 @@
     body.dark-mode .repo-topic{border-color:#343d52;color:#b6bfd0}
     body.dark-mode .repo-footer{border-top-color:#30384c}
     body.dark-mode .repo-link.secondary{border-color:#394258;background:#151b2b;color:#c4ccda}
-    @media(max-width:760px){.portfolio-links{display:none}.portfolio-nav{height:66px}.portfolio-page .page-inner{padding-top:52px}.portfolio-intro{margin-bottom:48px}.portfolio-intro h1{font-size:clamp(2.6rem,15vw,4rem)}.projects-heading{align-items:flex-start;flex-direction:column}.github-grid{grid-template-columns:1fr}}
+    @media(max-width:760px){.portfolio-links{display:none}.portfolio-nav{height:66px}.portfolio-page .page-inner{padding-top:52px}.portfolio-intro{margin-bottom:48px}.portfolio-intro h1{font-size:clamp(2.6rem,15vw,4rem)}.projects-heading{align-items:flex-start;flex-direction:column}.github-grid{grid-template-columns:1fr}.repo-card.featured .repo-content{display:flex}.repo-card.featured .repo-footer{margin-top:auto;padding-top:18px}.repo-card.featured{min-height:300px}}
   </style>
 </head>
 <body class="portfolio-body">
@@ -177,7 +184,7 @@
     return relevanceWords.some(word=>text.includes(word));
   }
 
-  function card(repo){
+  function card(repo,index=0){
     const details=curated[repo.name]||{};
     const title=details.title||repo.name.replace(/[-_]/g," ");
     const description=details.description||repo.description||"Open the repository to explore the project code and documentation.";
@@ -185,7 +192,7 @@
     const categories=details.categories||[repo.language?.toLowerCase()].filter(Boolean);
     const homepage=repo.homepage&&repo.homepage.startsWith("http")?repo.homepage:"";
     return `
-      <article class="repo-card" data-categories="${safe(categories.join(" "))}">
+      <article class="repo-card ${index<2?'featured':''}" data-categories="${safe(categories.join(" "))}">
         <div class="repo-card-top">
           <span class="window-dot red"></span><span class="window-dot yellow"></span><span class="window-dot green"></span>
         </div>
@@ -215,7 +222,7 @@
       const text=[categories,repo.language,...(repo.topics||[]),repo.name,repo.description].join(" ").toLowerCase();
       return text.includes(filter);
     });
-    githubGrid.innerHTML=shown.length?shown.map(card).join(""):'<div class="projects-status">No matching Data Engineering repositories yet.</div>';
+    githubGrid.innerHTML=shown.length?shown.map((repo,index)=>card(repo,index)).join(""):'<div class="projects-status">No matching Data Engineering repositories yet.</div>';
   }
 
   filters.forEach(button=>button.addEventListener("click",()=>{
