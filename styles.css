@@ -1,7 +1,8 @@
 :root {
-  --page-light: radial-gradient(circle at 15% 18%, rgba(160, 145, 255, .16), transparent 29%),
-    radial-gradient(circle at 86% 72%, rgba(187, 205, 255, .18), transparent 31%),
-    linear-gradient(135deg, #f7f6fc 0%, #f0f1fa 52%, #f8f7fc 100%);
+  --page-light: radial-gradient(circle at 14% 16%, rgba(128, 112, 235, .24), transparent 30%),
+    radial-gradient(circle at 88% 70%, rgba(118, 174, 224, .22), transparent 33%),
+    radial-gradient(circle at 55% 48%, rgba(202, 184, 241, .18), transparent 38%),
+    linear-gradient(135deg, #ececf8 0%, #e7ebf6 48%, #eef0f8 100%);
   --page-dark: #090d1a;
   --ink: #1e2633;
   --muted: #667085;
@@ -112,6 +113,79 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
   animation: waveHand 2.4s ease-in-out infinite;
 }
 
+/* Compact, friendly typography for the About page sections. */
+.about-page .about-hello {
+  margin-bottom: 10px;
+  font-size: 1.45rem;
+}
+
+.about-page .about-name {
+  font-size: clamp(3.4rem, 6vw, 5.25rem);
+  line-height: .88;
+  letter-spacing: -.055em;
+}
+
+.about-page .about-role {
+  margin: 20px 0 15px;
+  font-size: clamp(.82rem, 1.2vw, .98rem);
+}
+
+.about-page .about-description {
+  font-size: .9rem;
+  line-height: 1.68;
+}
+
+.about-page .about-info-tag { font-size: .75rem; }
+.about-page .section-number { font-size: 4.35rem; }
+
+.about-page .section-heading h2 {
+  font-size: 1.45rem;
+  letter-spacing: -.025em;
+}
+
+.about-page .build-card {
+  min-height: 205px;
+  padding: 21px;
+  border-radius: 19px;
+}
+
+.about-page .build-icon { font-size: 1.5rem; }
+.about-page .build-card h3 {
+  margin: 14px 0 13px;
+  font-size: .84rem;
+}
+
+.about-page .build-skills { gap: 6px; }
+.about-page .build-skills span {
+  padding: 5px 8px;
+  font-size: .68rem;
+}
+
+.about-page .journey-card h3 { font-size: .94rem; }
+.about-page .journey-card p { font-size: .81rem; }
+.about-page .journey-location { font-size: .69rem; }
+
+.about-page .education-card,
+.about-page .certification-card {
+  min-height: 175px;
+  padding: 23px;
+  border-radius: 18px;
+}
+
+.about-page .education-card h3,
+.about-page .certification-card h3 { font-size: 1rem; }
+
+.about-page .education-card p,
+.about-page .certification-card p { font-size: .83rem; }
+
+@media (max-width: 650px) {
+  .about-page .about-name {
+    font-size: clamp(3rem, 15vw, 4.1rem);
+  }
+
+  .about-page .section-number { font-size: 3.7rem; }
+}
+
 @keyframes waveHand {
   0%, 58%, 100% { transform: rotate(0deg); }
   8%  { transform: rotate(16deg); }
@@ -132,7 +206,7 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
 body:not(.dark-mode) .home-header,
 .about-page:not(.dark-mode) .about-header,
 .portfolio-body:not(.dark-mode) .portfolio-header {
-  background: rgba(247, 246, 252, .86) !important;
+  background: rgba(237, 239, 249, .88) !important;
   backdrop-filter: blur(14px);
 }
 
@@ -164,7 +238,7 @@ body.dark-mode .home-header,
 .build-card:hover,
 .education-card:hover,
 .certification-card:hover {
-  transform: translateY(-3px) !important;
+  transform: none !important;
   box-shadow: 0 22px 52px rgba(55, 63, 94, .13);
 }
 
