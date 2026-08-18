@@ -20,6 +20,65 @@
 
   <link rel="stylesheet" href="styles.css">
 
+
+  <style>
+    /* Complete About page styling kept inside about.html */
+    .about-page{background:#090d1a;color:#f8fafc;overflow-x:hidden}
+    .about-page .container{width:min(1120px,92%);margin-inline:auto}
+    .about-header{position:sticky;top:0;z-index:50;background:rgba(9,13,26,.88);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px)}
+    .about-nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .about-brand{display:flex;align-items:center;gap:6px;font-size:1.28rem;font-weight:800}
+    .brand-last{color:#7784ff}.brand-dot{width:8px;height:8px;border-radius:50%;background:#31d67b}
+    .about-links{display:flex;align-items:center;gap:10px}
+    .about-links a{padding:9px 14px;border-radius:9px;color:#aeb8cb;font-size:.9rem;font-weight:700}
+    .about-links a:hover,.about-links a.active{background:#6674ed;color:#fff}
+    .theme-toggle{width:40px;height:40px;border:1px solid rgba(255,255,255,.14);border-radius:10px;background:transparent;color:#fff;cursor:pointer}
+    .about-main{position:relative;isolation:isolate}
+    .about-space{position:absolute;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(circle at 15% 12%,rgba(77,91,220,.16),transparent 22%),radial-gradient(circle at 84% 34%,rgba(89,70,220,.12),transparent 20%),#090d1a}
+    .about-stars{position:absolute;inset:0;background-image:radial-gradient(circle,#fff 1px,transparent 1.5px);background-size:82px 82px;opacity:.28}
+    .stars-two{background-size:137px 137px;background-position:35px 46px;opacity:.17}
+    .about-rocket{display:none}
+    .about-intro-section{padding:82px 0 102px}
+    .about-intro{display:grid;grid-template-columns:minmax(340px,470px) minmax(0,1fr);align-items:center;gap:76px}
+    .about-photo-side{position:relative;display:flex;justify-content:center}
+    .about-photo-circle{width:min(100%,440px);aspect-ratio:1;overflow:hidden;border-radius:46% 54% 48% 52% / 55% 45% 55% 45%;border:4px solid #6976ff;background:#151b31;box-shadow:0 0 0 10px rgba(105,118,255,.08),0 28px 80px rgba(0,0,0,.4)}
+    .about-photo-circle img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .about-intro-content{max-width:610px}
+    .about-hello{margin:0 0 14px;color:#8995ff;font-size:1.15rem;font-weight:800;font-style:italic}
+    .about-name{margin:0;font-size:clamp(4rem,7.5vw,6.8rem);line-height:.83;letter-spacing:-.065em}
+    .about-name span{display:block}.about-name .outline-name{color:transparent;-webkit-text-stroke:2px #7784ff;text-stroke:2px #7784ff}
+    .about-role{margin:25px 0 20px;color:#e7eaf3;font-size:clamp(.95rem,1.6vw,1.18rem);line-height:1.5;letter-spacing:.08em}
+    .about-description{margin:0;color:#b3bdd0;font-size:1rem;line-height:1.78}
+    .about-info-tags{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+    .about-info-tag{padding:9px 13px;border:1px solid rgba(134,146,255,.4);border-radius:999px;background:rgba(37,44,77,.72);color:#d8dded;font-size:.82rem;font-weight:700}
+    .about-social-links{display:flex;gap:12px;margin-top:27px}
+    .about-social-links a{display:inline-flex;align-items:center;justify-content:center;height:42px;padding:0 17px;border:1px solid rgba(255,255,255,.18);border-radius:11px;background:rgba(16,22,40,.72);font-size:.85rem;font-weight:800}
+    .about-social-links a:hover{border-color:#7784ff;color:#97a1ff}
+    .about-section{padding:92px 0}
+    .section-heading{position:relative;display:flex;align-items:flex-end;gap:18px;margin-bottom:45px}
+    .section-number{color:transparent;-webkit-text-stroke:1px rgba(119,132,255,.28);font-size:5.5rem;font-weight:800;line-height:.72}
+    .section-heading h2{margin:0;padding-bottom:8px;border-bottom:3px solid #7784ff;font-size:2rem;line-height:1}
+    .build-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .build-card{min-height:230px;padding:25px;border:1px solid rgba(146,158,199,.3);border-radius:22px;background:linear-gradient(145deg,rgba(24,32,57,.88),rgba(12,17,32,.88));box-shadow:0 18px 45px rgba(0,0,0,.18)}
+    .build-icon{font-size:1.75rem}.build-card h3{margin:17px 0 16px;font-size:.92rem;letter-spacing:.06em}
+    .build-skills{display:flex;flex-wrap:wrap;gap:8px}.build-skills span{padding:6px 9px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#c7d0e2;font-size:.73rem}
+    .journey-timeline{position:relative;display:grid;grid-template-columns:1fr 78px 1fr;row-gap:36px;align-items:center}
+    .journey-timeline:before{content:"";grid-column:2;grid-row:1/7;justify-self:center;width:3px;height:100%;background:linear-gradient(#7784ff,#72d7ff,#7784ff)}
+    .journey-card{width:min(100%,430px);padding:0 0 24px;border:1px solid rgba(150,160,198,.32);border-radius:18px;background:rgba(20,27,49,.92);overflow:hidden}
+    .journey-card>*{margin-left:23px;margin-right:23px}.journey-year{margin:0!important;padding:15px 23px;background:linear-gradient(90deg,#5967dc,rgba(89,103,220,.28));font-weight:800}
+    .journey-location{margin-top:17px;color:#8793ff;font-size:.74rem;font-weight:800}.journey-card h3{margin-top:10px;margin-bottom:8px;font-size:1.02rem}.journey-card p{margin-top:0;margin-bottom:0;color:#aeb8cb;line-height:1.6;font-size:.88rem}
+    .journey-left{grid-column:1;justify-self:end}.journey-right{grid-column:3;justify-self:start}.journey-dot{grid-column:2;justify-self:center;width:17px;height:17px;border:4px solid #0b1020;border-radius:50%;background:#9aa4ff;box-shadow:0 0 0 3px #7784ff}
+    .journey-card:nth-of-type(1){grid-row:1}.journey-timeline>.journey-dot:nth-child(2){grid-row:1}.journey-card:nth-of-type(2){grid-row:2}.journey-timeline>.journey-dot:nth-child(4){grid-row:2}.journey-card:nth-of-type(3){grid-row:3}
+    .education-grid,.certification-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .education-card,.certification-card{position:relative;min-height:190px;padding:28px;border:1px solid rgba(150,160,198,.3);border-radius:20px;background:linear-gradient(145deg,rgba(24,32,57,.9),rgba(12,17,32,.9))}
+    .education-label{display:inline-block;margin-bottom:20px;padding:6px 10px;border-radius:999px;background:#626fe8;color:#fff;font-size:.7rem;font-weight:800}.education-card h3,.certification-card h3{margin:0 0 10px;font-size:1.15rem}.education-card p,.certification-card p{margin:0;color:#aeb8cb;line-height:1.55}.education-date{position:absolute;right:25px;bottom:24px;color:#8d99ff;font-size:.82rem;font-weight:800}
+    .certification-icon{margin-bottom:19px;font-size:2rem}.certification-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .about-connect-section{padding:95px 0 110px;text-align:center}.connect-small{margin:0 0 12px;color:#96a0b6}.about-connect h2{margin:0;font-size:clamp(2rem,5vw,3.8rem)}
+    .connect-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px}.connect-button{padding:12px 19px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(18,24,43,.82);font-weight:800}.connect-button:hover{border-color:#7784ff;color:#9ba5ff}
+    @media(max-width:900px){.about-intro{grid-template-columns:1fr;gap:45px}.about-photo-circle{width:min(76vw,430px)}.about-intro-content{text-align:center;margin:auto}.about-info-tags,.about-social-links{justify-content:center}.build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-links{display:none}}
+    @media(max-width:650px){.about-nav{height:66px}.about-intro-section{padding:52px 0 70px}.about-name{font-size:clamp(3.6rem,18vw,5rem)}.about-section{padding:68px 0}.section-number{font-size:4.4rem}.build-grid,.education-grid,.certification-grid{grid-template-columns:1fr}.journey-timeline{display:block;padding-left:30px}.journey-timeline:before{position:absolute;left:8px;top:0;width:2px;height:100%}.journey-card{width:100%;margin-bottom:24px}.journey-dot{display:none}.education-date{position:static;display:block;margin-top:20px}.theme-toggle{display:none}}
+  </style>
+
 </head>
 
 
@@ -122,159 +181,39 @@
   <!-- ========================================= -->
 
   <section class="about-intro-section">
-
     <div class="container about-intro">
-
-
-      <!-- LEFT PHOTO -->
-
       <div class="about-photo-side">
-
-
         <div class="about-photo-circle">
-
-          <img
-            src="lavanya-profile.png"
-            alt="Lavanya Gaddam"
-          >
-
+          <img src="lavanya-profile.png" alt="Lavanya Gaddam">
         </div>
-
-
-        <div class="about-experience-badge">
-
-          <strong>
-            4+
-          </strong>
-
-          <span>
-            YEARS EXP.
-          </span>
-
-        </div>
-
-
-        <div class="about-wave">
-          👋
-        </div>
-
-
       </div>
-
-
-
-      <!-- RIGHT CONTENT -->
 
       <div class="about-intro-content">
-
-
-        <p class="about-hello">
-          Hey there 👋 I'm
-        </p>
-
-
+        <p class="about-hello">Hello, I'm</p>
         <h1 class="about-name">
-
-          <span>
-            Lavanya
-          </span>
-
-          <span class="outline-name">
-            Gaddam
-          </span>
-
+          <span>Lavanya</span>
+          <span class="outline-name">Gaddam</span>
         </h1>
-
-
-        <h2 class="about-role">
-          DATA ENGINEER · BUILDING DATA SYSTEMS THAT SCALE
-        </h2>
-
-
-
-        <div class="about-info-tags">
-
-
-          <span class="about-info-tag">
-            💼 4+ Yrs Exp.
-          </span>
-
-
-          <span class="about-info-tag">
-            📍 Tampa, FL
-          </span>
-
-
-          <span class="about-info-tag">
-            🎓 MS Computer Science
-          </span>
-
-
-          <span class="about-info-tag">
-            ☁️ Cloud & Data Engineering
-          </span>
-
-
-        </div>
-
-
-
+        <h2 class="about-role">DATA ENGINEER · BUILDING RELIABLE DATA SYSTEMS AT SCALE</h2>
         <p class="about-description">
-
-          I'm a Data Engineer with 4+ years of experience building
-          scalable data pipelines, cloud data platforms, and analytics
-          solutions.
-
-          I work with Python, SQL, PySpark, Kafka, Airflow,
-          Databricks, Azure, AWS, Snowflake, and modern data
-          engineering technologies.
-
-          I enjoy transforming complex data into reliable systems
-          that help teams make better decisions.
-
+          I’m a Data Engineer with 4+ years of experience developing reliable
+          data pipelines, cloud-native data architectures, and scalable ETL/ELT
+          solutions for enterprise analytics. I work with Python, SQL, Apache
+          Spark, Kafka, Airflow, Databricks, Snowflake, Azure, and AWS to deliver
+          trusted, analytics-ready data.
         </p>
-
-
-
-        <div class="about-social-links">
-
-
-          <a
-            href="https://www.linkedin.com/in/lavanyagaddam05"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn"
-          >
-            in
-          </a>
-
-
-          <a
-            href="https://github.com/glavanya0110-spec"
-            target="_blank"
-            rel="noopener"
-            aria-label="GitHub"
-          >
-            GH
-          </a>
-
-
-          <a
-            href="tel:+16562155913"
-            aria-label="Phone"
-          >
-            ☎
-          </a>
-
-
+        <div class="about-info-tags">
+          <span class="about-info-tag">4+ Years of Experience</span>
+          <span class="about-info-tag">Tampa, Florida</span>
+          <span class="about-info-tag">MS in Computer Science</span>
         </div>
-
-
+        <div class="about-social-links">
+          <a href="https://www.linkedin.com/in/lavanyagaddam05" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/glavanya0110-spec" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:lavanyagaddam.0110@gmail.com">Email</a>
+        </div>
       </div>
-
-
     </div>
-
   </section>
 
 
