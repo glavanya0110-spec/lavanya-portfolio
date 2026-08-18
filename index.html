@@ -2,32 +2,666 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Lavanya Gaddam | Data Engineer</title>
+<title>Lavanya Gaddam | Data Engineer</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+<style>
 
-  <link rel="stylesheet" href="styles.css">
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+  background:#f8f7f4;
+  color:#181818;
+  transition:.3s ease;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1220px,92%);
+  margin:auto;
+}
+
+
+/* HEADER */
+
+.home-header{
+  background:#f8f7f4;
+  transition:.3s ease;
+}
+
+.home-nav{
+  height:84px;
+
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+
+  align-items:center;
+}
+
+.home-brand{
+  justify-self:start;
+
+  display:flex;
+  align-items:center;
+  gap:5px;
+
+  font-size:16px;
+  font-weight:800;
+}
+
+.brand-first{
+  color:#181818;
+}
+
+.brand-last{
+  color:#6469d9;
+}
+
+.brand-dot{
+  width:7px;
+  height:7px;
+
+  margin-left:3px;
+
+  border-radius:50%;
+
+  background:#65b66e;
+}
+
+.home-links{
+  justify-self:center;
+
+  display:flex;
+  align-items:center;
+
+  gap:30px;
+}
+
+.home-links a{
+  font-size:12px;
+  font-weight:500;
+
+  color:#444;
+
+  transition:.2s ease;
+}
+
+.home-links a:hover,
+.home-links a.active{
+  color:#6267d9;
+}
+
+.theme-toggle{
+  justify-self:end;
+
+  width:39px;
+  height:39px;
+
+  border:1px solid #ddd;
+  border-radius:50%;
+
+  background:#fff;
+
+  font-size:17px;
+
+  cursor:pointer;
+}
+
+
+/* HERO */
+
+.home-main{
+  min-height:calc(100vh - 84px);
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+
+  overflow:hidden;
+
+  background:#f8f7f4;
+}
+
+.home-hero{
+  width:100%;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  align-items:center;
+
+  gap:65px;
+
+  padding:35px 0 55px;
+
+  position:relative;
+  z-index:3;
+}
+
+
+/* LEFT */
+
+.home-title{
+  margin:0;
+
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+
+  font-size:clamp(60px,6.4vw,90px);
+
+  line-height:.94;
+
+  letter-spacing:-.065em;
+
+  font-weight:800;
+}
+
+.name-highlight{
+  padding:9px 27px 13px;
+
+  border-radius:70px;
+
+  background:#6268dc;
+
+  color:#fff;
+}
+
+.home-role{
+  margin:18px 0 0;
+
+  font-size:17px;
+  font-weight:500;
+
+  color:#333;
+}
+
+.home-tags{
+  max-width:610px;
+
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:7px;
+
+  margin-top:15px;
+}
+
+.home-tag{
+  padding:7px 11px;
+
+  border:1px solid #ddd;
+  border-radius:999px;
+
+  background:#fff;
+
+  color:#464646;
+
+  font-size:10px;
+  font-weight:500;
+}
+
+.home-about{
+  display:inline-flex;
+  align-items:center;
+
+  gap:16px;
+
+  margin-top:22px;
+
+  padding:10px 12px 10px 21px;
+
+  border-radius:16px;
+
+  background:#6268dc;
+
+  color:#fff;
+
+  font-size:12px;
+  font-weight:700;
+}
+
+.home-about-arrow{
+  width:36px;
+  height:36px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:11px;
+
+  background:rgba(255,255,255,.14);
+
+  font-size:18px;
+}
+
+
+/* SOCIAL */
+
+.social-area{
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  margin-top:22px;
+}
+
+.social-circles{
+  display:flex;
+  gap:11px;
+}
+
+.social-circle{
+  width:41px;
+  height:41px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid #aeb3e0;
+  border-radius:50%;
+
+  color:#5660c5;
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.social-circle:hover{
+  background:#6268dc;
+  color:#fff;
+}
+
+.social-line{
+  width:34px;
+  height:1px;
+
+  background:#777;
+}
+
+.social-label{
+  font-size:9px;
+  font-weight:700;
+
+  letter-spacing:.22em;
+
+  color:#505050;
+}
+
+
+/* PHOTO */
+
+.home-photo-side{
+  min-height:540px;
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.photo-circle{
+  position:absolute;
+
+  width:450px;
+  height:450px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(98,104,220,.08);
+}
+
+.photo-arch{
+  width:435px;
+  height:500px;
+
+  overflow:hidden;
+
+  border-radius:225px 225px 25px 25px;
+
+  background:#ddd;
+
+  position:relative;
+  z-index:2;
+}
+
+.photo-arch img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+  object-position:center 24%;
+}
+
+.experience-circle{
+  position:absolute;
+
+  left:23px;
+  bottom:62px;
+
+  width:105px;
+  height:105px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:#6268dc;
+
+  color:white;
+
+  text-align:center;
+
+  border:5px solid #f8f7f4;
+
+  z-index:5;
+}
+
+.experience-circle strong{
+  display:block;
+
+  font-size:30px;
+  line-height:1;
+}
+
+.experience-circle span{
+  display:block;
+
+  margin-top:5px;
+
+  font-size:8px;
+  line-height:1.25;
+}
+
+
+/* DARK BACKGROUND */
+
+body.dark-mode{
+  background:#101116;
+  color:#fff;
+}
+
+body.dark-mode .home-header,
+body.dark-mode .home-main{
+  background:#101116;
+}
+
+body.dark-mode .brand-first{
+  color:#fff;
+}
+
+body.dark-mode .brand-last{
+  color:#8387ff;
+}
+
+body.dark-mode .home-links a{
+  color:#bbbcc5;
+}
+
+body.dark-mode .home-links a.active,
+body.dark-mode .home-links a:hover{
+  color:#fff;
+}
+
+body.dark-mode .theme-toggle{
+  background:#181920;
+  border-color:#30313a;
+  color:#fff;
+}
+
+body.dark-mode .home-title{
+  color:#fff;
+}
+
+body.dark-mode .home-role{
+  color:#e1e2e7;
+}
+
+body.dark-mode .home-tag{
+  background:#181920;
+  border-color:#31323b;
+  color:#d6d7dd;
+}
+
+body.dark-mode .social-circle{
+  color:#9398ff;
+  border-color:#666aa0;
+}
+
+body.dark-mode .social-label{
+  color:#c5c6cd;
+}
+
+body.dark-mode .social-line{
+  background:#73747c;
+}
+
+body.dark-mode .experience-circle{
+  border-color:#101116;
+}
+
+
+/* STARS + ROCKETS */
+
+.space-effects{
+  display:none;
+}
+
+body.dark-mode .space-effects{
+  display:block;
+
+  position:absolute;
+  inset:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+
+  z-index:1;
+}
+
+.stars{
+  position:absolute;
+  inset:0;
+
+  background-image:
+    radial-gradient(circle at 5% 12%,white 0 1.5px,transparent 2px),
+    radial-gradient(circle at 11% 55%,white 0 1px,transparent 2px),
+    radial-gradient(circle at 16% 82%,white 0 1.5px,transparent 2px),
+    radial-gradient(circle at 22% 28%,white 0 1px,transparent 2px),
+    radial-gradient(circle at 28% 70%,white 0 1.5px,transparent 2px),
+    radial-gradient(circle at 34% 15%,white 0 1px,transparent 2px),
+    radial-gradient(circle at 40% 45%,white 0 1.5px,transparent 2px),
+    radial-gradient(circle at 47% 84%,white 0 1px,transparent 2px),
+    radial-gradient(circle at 53% 25%,white 0 1.5px,transparent 2px),
+    radial-gradient(circle at 60% 64%,white 0 1px,transparent 2px),
+    radial-gradient(circle at 67% 11%,white 0 1.5px,transparent 2px),
+    radial-gradient(circle at 72% 48%,white 0 1px,transparent 2px),
+    radial-gradient(circle at 78% 79%,white 0 1.5px,transparent 2px),
+    radial-gradient(circle at 84% 21%,white 0 1px,transparent 2px),
+    radial-gradient(circle at 90% 59%,white 0 1.5px,transparent 2px),
+    radial-gradient(circle at 96% 88%,white 0 1px,transparent 2px);
+
+  opacity:.55;
+
+  animation:twinkle 3.5s ease-in-out infinite alternate;
+}
+
+.stars-two{
+  transform:translateY(24px);
+  opacity:.25;
+}
+
+@keyframes twinkle{
+  from{opacity:.25}
+  to{opacity:.65}
+}
+
+.rocket{
+  position:absolute;
+
+  font-size:21px;
+
+  opacity:.8;
+}
+
+.rocket-one{
+  left:-50px;
+  bottom:13%;
+
+  transform:rotate(35deg);
+
+  animation:rocketOne 14s linear infinite;
+}
+
+.rocket-two{
+  right:-50px;
+  top:22%;
+
+  font-size:16px;
+
+  transform:rotate(-140deg);
+
+  animation:rocketTwo 18s linear infinite;
+}
+
+@keyframes rocketOne{
+  from{
+    left:-50px;
+    bottom:10%;
+  }
+
+  to{
+    left:105%;
+    bottom:70%;
+  }
+}
+
+@keyframes rocketTwo{
+  from{
+    right:-50px;
+    top:18%;
+  }
+
+  to{
+    right:105%;
+    top:70%;
+  }
+}
+
+
+/* TABLET */
+
+@media(max-width:950px){
+
+  .home-hero{
+    grid-template-columns:1fr;
+  }
+
+  .home-copy{
+    text-align:center;
+  }
+
+  .home-title,
+  .home-tags,
+  .social-area{
+    justify-content:center;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+  .home-nav{
+    height:70px;
+  }
+
+  .home-brand{
+    font-size:13px;
+  }
+
+  .home-links{
+    gap:14px;
+  }
+
+  .home-links a:nth-child(2),
+  .home-links a:nth-child(3),
+  .home-links a:nth-child(4){
+    display:none;
+  }
+
+  .home-title{
+    font-size:55px;
+  }
+
+  .name-highlight{
+    padding:8px 20px 11px;
+  }
+
+  .home-photo-side{
+    min-height:450px;
+  }
+
+  .photo-circle{
+    width:340px;
+    height:340px;
+  }
+
+  .photo-arch{
+    width:315px;
+    height:405px;
+  }
+
+  .experience-circle{
+    width:90px;
+    height:90px;
+
+    left:2px;
+    bottom:38px;
+  }
+
+}
+
+</style>
 </head>
 
 
-<body class="home-page">
+<body>
 
 
 <header class="home-header">
 
   <div class="container home-nav">
 
-
-    <!-- LEFT: NAME -->
 
     <a class="home-brand" href="index.html">
 
@@ -44,8 +678,6 @@
     </a>
 
 
-
-    <!-- CENTER: NAVIGATION -->
 
     <nav class="home-links">
 
@@ -73,13 +705,11 @@
 
 
 
-    <!-- RIGHT: THEME -->
-
     <button
       class="theme-toggle"
       id="themeToggle"
       type="button"
-      aria-label="Switch light or dark theme"
+      aria-label="Change theme"
     >
       ☾
     </button>
@@ -94,16 +724,9 @@
 <main class="home-main">
 
 
-  <!--
-    These are hidden in light mode.
-    Later, styles.css will make them visible
-    and animated only in dark mode.
-  -->
+  <div class="space-effects">
 
-  <div class="space-effects" aria-hidden="true">
-
-    <div class="stars stars-one"></div>
-
+    <div class="stars"></div>
     <div class="stars stars-two"></div>
 
     <div class="rocket rocket-one">
@@ -121,14 +744,12 @@
   <div class="container home-hero">
 
 
-    <!-- LEFT SIDE -->
-
     <section class="home-copy">
 
 
       <h1 class="home-title">
 
-        <span class="im">
+        <span>
           I'm
         </span>
 
@@ -139,48 +760,36 @@
       </h1>
 
 
-
       <p class="home-role">
         Data Engineer
       </p>
 
 
-
       <div class="home-tags">
-
 
         <span class="home-tag">
           📍 Tampa, FL
         </span>
 
-
         <span class="home-tag">
           💼 Data Engineer
         </span>
-
 
         <span class="home-tag">
           🎓 MS in Computer Science
         </span>
 
-
         <span class="home-tag">
           💻 Python · PySpark · Azure · AWS
         </span>
-
 
       </div>
 
 
 
-      <a
-        class="home-about"
-        href="about.html"
-      >
+      <a class="home-about" href="about.html">
 
-        <span>
-          About Me
-        </span>
+        About Me
 
         <span class="home-about-arrow">
           ↗
@@ -190,53 +799,41 @@
 
 
 
-      <!-- SOCIAL / CONTACT -->
-
       <div class="social-area">
 
 
         <div class="social-circles">
 
-
           <a
-            class="social-circle linkedin"
+            class="social-circle"
             href="https://www.linkedin.com/in/lavanyagaddam05"
             target="_blank"
             rel="noopener"
-            aria-label="LinkedIn"
-            title="LinkedIn"
           >
             in
           </a>
 
-
           <a
-            class="social-circle github"
+            class="social-circle"
             href="https://github.com/glavanya0110-spec"
             target="_blank"
             rel="noopener"
-            aria-label="GitHub"
-            title="GitHub"
           >
             GH
           </a>
 
-
           <a
-            class="social-circle phone"
+            class="social-circle"
             href="tel:+16562155913"
-            aria-label="Call Lavanya"
             title="+1 (656) 215-5913"
           >
             ☎
           </a>
 
-
         </div>
 
 
         <span class="social-line"></span>
-
 
         <span class="social-label">
           FIND ME ON
@@ -249,8 +846,6 @@
     </section>
 
 
-
-    <!-- RIGHT SIDE -->
 
     <section class="home-photo-side">
 
@@ -266,7 +861,6 @@
         >
 
       </div>
-
 
 
       <div class="experience-circle">
@@ -299,46 +893,41 @@
 
 <script>
 
-  const themeToggle =
-    document.getElementById("themeToggle");
+const themeToggle =
+  document.getElementById("themeToggle");
+
+const savedTheme =
+  localStorage.getItem("portfolio-theme");
 
 
-  const savedTheme =
-    localStorage.getItem("portfolio-theme");
+if(savedTheme === "dark"){
+
+  document.body.classList.add("dark-mode");
+
+  themeToggle.textContent = "☀";
+
+}
 
 
-  if (savedTheme === "dark") {
+themeToggle.addEventListener("click", () => {
 
-    document.body.classList.add("dark-mode");
+  document.body.classList.toggle("dark-mode");
 
-    themeToggle.textContent = "☀";
+  const dark =
+    document.body.classList.contains("dark-mode");
 
-  }
+  themeToggle.textContent =
+    dark ? "☀" : "☾";
 
+  localStorage.setItem(
+    "portfolio-theme",
+    dark ? "dark" : "light"
+  );
 
-  themeToggle.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-
-    const isDark =
-      document.body.classList.contains("dark-mode");
-
-
-    themeToggle.textContent =
-      isDark ? "☀" : "☾";
-
-
-    localStorage.setItem(
-      "portfolio-theme",
-      isDark ? "dark" : "light"
-    );
-
-  });
+});
 
 </script>
 
 
 </body>
-
 </html>
