@@ -1,269 +1,57 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Portfolio | Lavanya Gaddam</title>
-
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
 <header class="site-header">
-
   <div class="container navbar">
-
-    <a class="brand" href="index.html">
-
-      <span class="brand-mark">
-        LG
-      </span>
-
-      <span class="brand-copy">
-
-        <strong>
-          Lavanya Gaddam
-        </strong>
-
-        <small>
-          Data Engineer
-        </small>
-
-      </span>
-
-    </a>
-
-
+    <a class="brand" href="index.html"><span class="brand-mark">LG</span><span class="brand-copy"><strong>Lavanya Gaddam</strong><small>Data Engineer</small></span></a>
     <nav class="nav-links">
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="journey.html">
-        Journey
-      </a>
-
-      <a class="active" href="portfolio.html">
-        Portfolio
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="journey.html">Journey</a><a class="active" href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
     </nav>
-
-
-    <a class="nav-cta" href="contact.html">
-      Let’s Connect ↗
-    </a>
-
+    <a class="nav-cta" href="contact.html">Let's Connect ↗</a>
   </div>
-
 </header>
 
+<main class="portfolio-page">
+  <div class="container page-inner">
+    <div class="kicker light-kicker">PORTFOLIO</div>
+    <h1 class="title light-title">Built for <span>real data.</span></h1>
+    <p class="sub portfolio-sub">A focused project showing how I approach streaming, processing, warehousing, orchestration, and analytics.</p>
 
-
-<main class="page">
-
-
-  <section class="section s1">
-
-    <div class="container">
-
-
-      <div class="kicker">
-        GITHUB PROJECTS
-      </div>
-
-
-      <h1 class="title">
-        My Portfolio
-      </h1>
-
-
-      <p class="intro">
-        Selected Data Engineering work.
-      </p>
-
-
-
-      <article class="featured">
-
-
-        <div class="dots">
-
-          <i></i>
-          <i></i>
-          <i></i>
-
+    <section class="project-showcase">
+      <div class="project-top">
+        <div>
+          <span class="project-label">FEATURED PROJECT</span>
+          <h2>Real-Time Customer Analytics Pipeline</h2>
+          <p>Streaming customer events from ingestion to analytics-ready insights.</p>
         </div>
-
-
-
-        <div class="feature-grid">
-
-
-          <div>
-
-
-            <div class="project-label">
-              FEATURED PROJECT
-            </div>
-
-
-            <h2>
-              Real-Time Customer Analytics Pipeline
-            </h2>
-
-
-            <p>
-              End-to-end streaming pipeline from
-              ingestion to analytics-ready insights.
-            </p>
-
-
-            <div class="tags">
-
-              <span>Kafka</span>
-              <span>Spark</span>
-              <span>Snowflake</span>
-              <span>Airflow</span>
-              <span>Power BI</span>
-
-            </div>
-
-
-          </div>
-
-
-
-          <div class="feature-side">
-
-
-            <div>
-
-              <strong>
-                5M
-              </strong>
-
-              <span>
-                events / day
-              </span>
-
-            </div>
-
-
-            <a
-              class="btn primary"
-              href="https://github.com/glavanya0110-spec/real-time-customer-analytics"
-              target="_blank"
-              rel="noopener"
-            >
-              View on GitHub ↗
-            </a>
-
-
-          </div>
-
-
-        </div>
-
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <section class="section s2">
-
-    <div class="container">
-
-
-      <div class="kicker">
-        MORE PROJECTS
+        <div class="project-number">01</div>
       </div>
 
-
-      <div class="project-grid">
-
-
-        <article class="project-card">
-
-
-          <div class="dots">
-
-            <i></i>
-            <i></i>
-            <i></i>
-
-          </div>
-
-
-          <h3>
-            More coming soon
-          </h3>
-
-
-          <p>
-            Future projects will appear here
-            as I publish them.
-          </p>
-
-
-          <div class="tags">
-
-            <span>
-              Data Engineering
-            </span>
-
-          </div>
-
-
-        </article>
-
-
+      <div class="flow">
+        <div><b>Kafka</b><span>Ingest</span></div><i>→</i>
+        <div><b>Spark</b><span>Process</span></div><i>→</i>
+        <div><b>Snowflake</b><span>Store</span></div><i>→</i>
+        <div><b>Airflow</b><span>Orchestrate</span></div><i>→</i>
+        <div><b>Power BI</b><span>Visualize</span></div>
       </div>
 
+      <div class="project-metrics">
+        <div><strong>5M</strong><span>events/day</span></div>
+        <div><strong>Real-time</strong><span>streaming design</span></div>
+        <div><strong>End-to-end</strong><span>data flow</span></div>
+      </div>
 
-    </div>
-
-  </section>
-
-
+      <a class="btn portfolio-btn" href="https://github.com/glavanya0110-spec/real-time-customer-analytics" target="_blank" rel="noopener">View on GitHub ↗</a>
+    </section>
+  </div>
 </main>
 
-
-
-<footer>
-
-  <div class="container foot">
-
-    <span>
-      © 2026 Lavanya Gaddam
-    </span>
-
-    <span>
-      Data Engineer · Tampa, Florida
-    </span>
-
-  </div>
-
-</footer>
-
-
+<footer class="dark-footer"><div class="container foot"><span>© 2026 Lavanya Gaddam</span><span>Data Engineer · Tampa, Florida</span></div></footer>
 </body>
-
 </html>
