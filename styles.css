@@ -56,6 +56,17 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
 .about-page.dark-mode .about-stars,
 .portfolio-body.dark-mode .portfolio-stars {
   display: block;
+  background-image:
+    radial-gradient(circle at 7% 19%, #fff 0 1px, transparent 1.7px),
+    radial-gradient(circle at 18% 73%, #fff 0 1.35px, transparent 2px),
+    radial-gradient(circle at 31% 37%, #fff 0 .9px, transparent 1.6px),
+    radial-gradient(circle at 46% 88%, #fff 0 1.2px, transparent 1.9px),
+    radial-gradient(circle at 59% 14%, #fff 0 .9px, transparent 1.6px),
+    radial-gradient(circle at 72% 61%, #fff 0 1.3px, transparent 2px),
+    radial-gradient(circle at 87% 29%, #fff 0 1px, transparent 1.7px),
+    radial-gradient(circle at 95% 82%, #fff 0 .85px, transparent 1.5px) !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
   animation: sharedStarBlink 2.8s ease-in-out infinite alternate !important;
   will-change: opacity, filter;
 }
@@ -63,14 +74,22 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
 .dark-mode .stars-two,
 .about-page.dark-mode .stars-two,
 .portfolio-body.dark-mode .portfolio-stars.two {
+  background-image:
+    radial-gradient(circle at 11% 91%, #fff 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 25% 8%, #fff 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 39% 64%, #fff 0 .85px, transparent 1.5px),
+    radial-gradient(circle at 54% 43%, #fff 0 1.25px, transparent 1.9px),
+    radial-gradient(circle at 68% 92%, #fff 0 .85px, transparent 1.5px),
+    radial-gradient(circle at 81% 11%, #fff 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 92% 55%, #fff 0 .8px, transparent 1.5px) !important;
   animation-duration: 4.4s !important;
   animation-delay: -1.7s !important;
 }
 
 @keyframes sharedStarBlink {
-  0%   { opacity: .13; filter: drop-shadow(0 0 0 transparent); }
-  48%  { opacity: .34; }
-  100% { opacity: .72; filter: drop-shadow(0 0 3px rgba(255,255,255,.72)); }
+  0%   { opacity: .1; filter: drop-shadow(0 0 0 transparent); }
+  48%  { opacity: .25; }
+  100% { opacity: .52; filter: drop-shadow(0 0 2px rgba(255,255,255,.65)); }
 }
 
 /* Rockets move only with the dark/night theme. */
