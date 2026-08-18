@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -44,7 +44,7 @@
     .about-photo-circle{width:min(100%,440px);aspect-ratio:1;overflow:hidden;border-radius:46% 54% 48% 52% / 55% 45% 55% 45%;border:4px solid #6976ff;background:#151b31;box-shadow:0 0 0 10px rgba(105,118,255,.08),0 28px 80px rgba(0,0,0,.4)}
     .about-photo-circle img{width:100%;height:100%;object-fit:cover;object-position:center top}
     .about-intro-content{max-width:610px}
-    .about-hello{margin:0 0 14px;color:#8995ff;font-size:1.15rem;font-weight:800;font-style:italic}
+    .about-hello{margin:0 0 14px;color:#8995ff;font-family:"Caveat",cursive;font-size:1.85rem;font-weight:700;font-style:normal;letter-spacing:.01em}
     .about-name{margin:0;font-size:clamp(4rem,7.5vw,6.8rem);line-height:.83;letter-spacing:-.065em}
     .about-name span{display:block}.about-name .outline-name{color:transparent;-webkit-text-stroke:2px #7784ff;text-stroke:2px #7784ff}
     .about-role{margin:25px 0 20px;color:#e7eaf3;font-size:clamp(.95rem,1.6vw,1.18rem);line-height:1.5;letter-spacing:.08em}
@@ -77,8 +77,13 @@
     .education-card,.certification-card{position:relative;min-height:190px;padding:28px;border:1px solid rgba(150,160,198,.3);border-radius:20px;background:linear-gradient(145deg,rgba(24,32,57,.9),rgba(12,17,32,.9))}
     .education-label{display:inline-block;margin-bottom:20px;padding:6px 10px;border-radius:999px;background:#626fe8;color:#fff;font-size:.7rem;font-weight:800}.education-card h3,.certification-card h3{margin:0 0 10px;font-size:1.15rem}.education-card p,.certification-card p{margin:0;color:#aeb8cb;line-height:1.55}.education-date{position:absolute;right:25px;bottom:24px;color:#8d99ff;font-size:.82rem;font-weight:800}
     .certification-icon{margin-bottom:19px;font-size:2rem}.certification-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .about-connect-section{padding:95px 0 110px;text-align:center}.connect-small{margin:0 0 12px;color:#96a0b6}.about-connect h2{margin:0;font-size:clamp(2rem,5vw,3.8rem)}
-    .connect-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px}.connect-button{padding:12px 19px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(18,24,43,.82);font-weight:800}.connect-button:hover{border-color:#7784ff;color:#9ba5ff}
+    .about-connect-section{padding:95px 0 110px;text-align:center;background:linear-gradient(135deg,rgba(88,71,170,.2),rgba(168,91,134,.16),rgba(199,137,73,.13));border-top:1px solid rgba(255,255,255,.08)}
+    .connect-small{margin:0 0 12px;color:#b6bdd0}.about-connect h2{margin:0;font-size:clamp(2rem,5vw,3.8rem)}
+    .about-connect h2 span{color:#a892ff}.about-connect h2 em{color:#f0a36f;font-style:normal}
+    .connect-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px}.connect-button{padding:12px 19px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(18,24,43,.82);font-weight:800}.connect-button:hover{transform:translateY(-2px)}
+    .connect-button:nth-child(1){border-color:#6fa8ff;color:#b9d5ff}
+    .connect-button:nth-child(2){border-color:#a892ff;color:#d2c8ff}
+    .connect-button:nth-child(3){border-color:#f0a36f;color:#ffd0ae}
 
     /* Light mode */
     .about-page:not(.dark-mode){background:#edf3ff;color:#111827}
@@ -116,6 +121,12 @@
     .about-page:not(.dark-mode) .journey-card:nth-of-type(4) .journey-year{background:#ffe7ee;color:#ad4564}
     .about-page:not(.dark-mode) .journey-card:nth-of-type(5){border-color:#eadba7}
     .about-page:not(.dark-mode) .journey-card:nth-of-type(5) .journey-year{background:#fff1c7;color:#9a7417}
+    .about-page:not(.dark-mode) .about-connect-section{background:linear-gradient(135deg,#fff0e9 0%,#f4edff 50%,#eaf4f1 100%);border-top-color:#e5ddea}
+    .about-page:not(.dark-mode) .about-connect h2 span{color:#7659c8}
+    .about-page:not(.dark-mode) .about-connect h2 em{color:#d36f4d}
+    .about-page:not(.dark-mode) .connect-button:nth-child(1){border-color:#9fc7ff;background:#e9f3ff;color:#245f9e}
+    .about-page:not(.dark-mode) .connect-button:nth-child(2){border-color:#c6b7f2;background:#f0ebff;color:#6046a7}
+    .about-page:not(.dark-mode) .connect-button:nth-child(3){border-color:#f2bda9;background:#fff0e9;color:#a54f34}
 
     @media(max-width:900px){.about-intro{grid-template-columns:1fr;gap:45px}.about-photo-circle{width:min(76vw,430px)}.about-intro-content{text-align:center;margin:auto}.about-info-tags,.about-social-links{justify-content:center}.build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-links{display:none}}
     @media(max-width:650px){.about-nav{height:66px}.about-intro-section{padding:52px 0 70px}.about-name{font-size:clamp(3.6rem,18vw,5rem)}.about-section{padding:68px 0}.section-number{font-size:4.4rem}.build-grid,.education-grid,.certification-grid{grid-template-columns:1fr}.journey-timeline{display:block;padding-left:30px}.journey-timeline:before{position:absolute;left:8px;top:0;width:2px;height:100%}.journey-card{width:100%;margin-bottom:24px}.journey-dot{display:none}.education-date{position:static;display:block;margin-top:20px}.theme-toggle{display:none}}
@@ -793,12 +804,12 @@
 
 
       <p class="connect-small">
-        Interested in data, cloud, and scalable systems?
+        Have a data, cloud, or engineering opportunity in mind?
       </p>
 
 
       <h2>
-        Let's build something together
+        Let’s turn <span>data</span> into <em>impact</em>
       </h2>
 
 
