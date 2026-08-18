@@ -298,7 +298,7 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
   display: none !important;
 }
 
-/* Stars blink softly at two different speeds in dark mode. */
+/* Natural night-sky twinkle: two star groups brighten independently. */
 .dark-mode .stars,
 .about-page.dark-mode .about-stars,
 .portfolio-body.dark-mode .portfolio-stars {
@@ -314,7 +314,7 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
     radial-gradient(circle at 95% 82%, #fff 0 .85px, transparent 1.5px) !important;
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
-  animation: sharedStarBlink 2.8s ease-in-out infinite alternate !important;
+  animation: starTwinkleA 4.8s ease-in-out infinite !important;
   will-change: opacity, filter;
 }
 
@@ -329,14 +329,25 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
     radial-gradient(circle at 68% 92%, #fff 0 .85px, transparent 1.5px),
     radial-gradient(circle at 81% 11%, #fff 0 1.1px, transparent 1.8px),
     radial-gradient(circle at 92% 55%, #fff 0 .8px, transparent 1.5px) !important;
-  animation-duration: 4.4s !important;
-  animation-delay: -1.7s !important;
+  animation: starTwinkleB 6.2s ease-in-out -2.7s infinite !important;
 }
 
-@keyframes sharedStarBlink {
-  0%   { opacity: .28; filter: brightness(.9) drop-shadow(0 0 1px rgba(255,255,255,.25)); }
-  45%  { opacity: .62; filter: brightness(1.45) drop-shadow(0 0 3px rgba(255,255,255,.75)); }
-  100% { opacity: 1; filter: brightness(2) drop-shadow(0 0 6px rgba(255,255,255,1)); }
+@keyframes starTwinkleA {
+  0%, 100% { opacity: .24; filter: brightness(.85) drop-shadow(0 0 1px rgba(255,255,255,.20)); }
+  18%      { opacity: .94; filter: brightness(2.65) drop-shadow(0 0 8px rgba(225,240,255,.95)); }
+  33%      { opacity: .38; filter: brightness(1.05) drop-shadow(0 0 2px rgba(255,255,255,.35)); }
+  57%      { opacity: .70; filter: brightness(1.85) drop-shadow(0 0 5px rgba(190,225,255,.80)); }
+  74%      { opacity: .30; filter: brightness(.95) drop-shadow(0 0 1px rgba(255,255,255,.25)); }
+  88%      { opacity: 1; filter: brightness(3.15) drop-shadow(0 0 10px rgba(255,255,255,1)); }
+}
+
+@keyframes starTwinkleB {
+  0%, 100% { opacity: .35; filter: brightness(1) drop-shadow(0 0 1px rgba(255,255,255,.25)); }
+  14%      { opacity: .55; filter: brightness(1.35) drop-shadow(0 0 3px rgba(205,232,255,.60)); }
+  29%      { opacity: .22; filter: brightness(.75) drop-shadow(0 0 0 rgba(255,255,255,0)); }
+  46%      { opacity: 1; filter: brightness(3) drop-shadow(0 0 9px rgba(255,255,255,1)); }
+  63%      { opacity: .42; filter: brightness(1.15) drop-shadow(0 0 2px rgba(255,255,255,.35)); }
+  81%      { opacity: .82; filter: brightness(2.25) drop-shadow(0 0 7px rgba(210,235,255,.90)); }
 }
 
 /* Rockets move only with the dark/night theme. */
