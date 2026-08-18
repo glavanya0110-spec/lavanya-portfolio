@@ -13,7 +13,7 @@
     .portfolio-effects{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
     .portfolio-stars{position:absolute;inset:0;background-image:radial-gradient(circle,#6f79a8 1px,transparent 1.5px);background-size:76px 76px;opacity:.12;animation:portfolioTwinkle 4s ease-in-out infinite alternate}
     .portfolio-stars.two{background-size:131px 131px;background-position:33px 45px;opacity:.07}
-    .portfolio-rocket{position:absolute;font-size:18px;opacity:.28;filter:saturate(.85)}
+    .portfolio-rocket{display:none;position:absolute;font-size:18px;opacity:.28;filter:saturate(.85)}
     .portfolio-rocket.one{left:-45px;bottom:12%;transform:rotate(35deg);animation:portfolioRocketOne 16s linear infinite}
     .portfolio-rocket.two{right:-45px;top:24%;font-size:15px;transform:rotate(-140deg);animation:portfolioRocketTwo 21s linear infinite}
     @keyframes portfolioTwinkle{from{opacity:.07}to{opacity:.18}}
@@ -89,8 +89,8 @@
     body.dark-mode{background:#090d1a;color:#f8fafc}
     body.dark-mode .portfolio-stars{background-image:radial-gradient(circle,#fff 1px,transparent 1.6px);opacity:.3}
     body.dark-mode .portfolio-stars.two{opacity:.16}
-    body.dark-mode .portfolio-rocket{opacity:.72}
-    body.dark-mode .portfolio-header{background:rgba(9,13,26,.82);backdrop-filter:blur(14px)}
+    body.dark-mode .portfolio-rocket{display:block;opacity:.72}
+    body.dark-mode .portfolio-header{background:rgba(9,13,26,.9)!important;backdrop-filter:blur(14px)}
     body.dark-mode .portfolio-brand .brand-first{color:#fff}
     body.dark-mode .portfolio-links a{color:#b7bfd0}
     body.dark-mode .portfolio-links a:hover,body.dark-mode .portfolio-links a.active{background:#6674ed;color:#fff}
@@ -103,7 +103,11 @@
     body.dark-mode .repo-card{border:0;border-top:2px solid #7468bd;background:rgba(18,24,41,.9);box-shadow:none}
     body.dark-mode .repo-card.featured{border:0;border-top:3px solid #6f9fbe}
     body.dark-mode .featured-grid .repo-card:nth-child(2){border-top-color:#63a47f}
-    body.dark-mode .repo-card-top{border-bottom-color:#30384c;background:#121829}
+    body.dark-mode .repo-card.featured{background:linear-gradient(135deg,#121b2c,#17253a)!important}
+    body.dark-mode .featured-grid .repo-card:nth-child(2){background:linear-gradient(135deg,#12231e,#193128)!important}
+    body.dark-mode .github-grid .repo-card:nth-child(3n+1),body.dark-mode .github-grid .repo-card:nth-child(3n+2),body.dark-mode .github-grid .repo-card:nth-child(3n){background:rgba(18,24,41,.94)!important}
+    body.dark-mode .repo-card-top{border-bottom-color:#30384c;background:#101728!important}
+    body.dark-mode .repo-card h3{color:#f5f7fb!important}
     body.dark-mode .repo-description{color:#aab4c7}
     body.dark-mode .repo-card.featured h3{color:#f3f6fb!important}
     body.dark-mode .repo-card.featured .repo-description{color:#c2cad7}
