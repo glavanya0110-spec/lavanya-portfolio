@@ -1,65 +1,797 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Lavanya Gaddam | Data Engineer</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html,
+    body{
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:"Manrope",Arial,sans-serif;
+      background:#f8f7f4;
+      color:#171717;
+      transition:background .25s ease,color .25s ease;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      display:block;
+    }
+
+    .container{
+      width:min(1220px,92%);
+      margin:auto;
+    }
+
+
+    /* HEADER */
+
+    .home-header{
+      background:rgba(248,247,244,.96);
+      transition:background .25s ease;
+    }
+
+    .home-nav{
+      height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+
+    .home-brand{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      font-size:17px;
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+
+    .home-brand span{
+      color:#6769dc;
+    }
+
+    .brand-dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#69ad6e;
+    }
+
+    .home-links{
+      display:flex;
+      align-items:center;
+      gap:36px;
+    }
+
+    .home-links a{
+      font-size:12px;
+      font-weight:500;
+      color:#4b4b4b;
+      transition:.2s ease;
+    }
+
+    .home-links a:hover,
+    .home-links a.active{
+      color:#6568df;
+    }
+
+    .theme-toggle{
+      width:39px;
+      height:39px;
+      border:1px solid #deddda;
+      border-radius:50%;
+      background:#fff;
+      color:#323232;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      font-size:16px;
+      transition:.2s ease;
+    }
+
+
+    /* HERO */
+
+    .home-main{
+      min-height:calc(100vh - 86px);
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 82% 25%,rgba(105,105,220,.055),transparent 26%),
+        radial-gradient(circle at 12% 80%,rgba(105,105,220,.035),transparent 24%);
+    }
+
+    .home-main:before{
+      content:"";
+      position:absolute;
+      width:390px;
+      height:390px;
+      border-radius:50%;
+      border:1px solid rgba(103,105,220,.06);
+      right:4%;
+      top:12%;
+    }
+
+    .home-main:after{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:1px solid rgba(103,105,220,.045);
+      left:4%;
+      bottom:8%;
+    }
+
+    .home-hero{
+      width:100%;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:64px;
+      align-items:center;
+      padding:42px 0 66px;
+      position:relative;
+      z-index:2;
+    }
+
+
+    /* LEFT */
+
+    .home-copy{
+      padding-left:4px;
+    }
+
+    .home-title{
+      margin:0;
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:18px;
+
+      font-size:clamp(76px,7.8vw,114px);
+      line-height:.92;
+      letter-spacing:-.075em;
+      font-weight:800;
+    }
+
+    .home-title .im{
+      color:#161616;
+    }
+
+    .home-title .name-highlight{
+      display:inline-block;
+      padding:12px 34px 16px;
+      border-radius:80px;
+      background:#696ce0;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .home-role{
+      margin:21px 0 0;
+      font-size:18px;
+      font-weight:500;
+      color:#2f2f2f;
+    }
+
+    .home-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+      max-width:660px;
+    }
+
+    .home-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid #deddd8;
+      background:rgba(255,255,255,.74);
+      color:#444;
+      font-size:10px;
+      font-weight:500;
+    }
+
+    .home-about{
+      display:inline-flex;
+      align-items:center;
+      gap:18px;
+      margin-top:25px;
+      padding:11px 13px 11px 22px;
+      border-radius:17px;
+      background:#696ce0;
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+      box-shadow:0 12px 24px rgba(105,108,224,.15);
+      transition:.2s ease;
+    }
+
+    .home-about:hover{
+      transform:translateY(-2px);
+    }
+
+    .home-about-arrow{
+      width:37px;
+      height:37px;
+      border-radius:12px;
+      background:rgba(255,255,255,.13);
+      display:grid;
+      place-items:center;
+      font-size:18px;
+    }
+
+    .social-area{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .social-circles{
+      display:flex;
+      gap:11px;
+    }
+
+    .social-circle{
+      width:41px;
+      height:41px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      border:1px solid #aeb0df;
+      color:#5c62c8;
+      background:transparent;
+      font-size:10px;
+      font-weight:800;
+      transition:.2s ease;
+    }
+
+    .social-circle:hover{
+      background:#696ce0;
+      color:#fff;
+      border-color:#696ce0;
+    }
+
+    .social-line{
+      width:34px;
+      height:1px;
+      background:#858585;
+    }
+
+    .social-label{
+      font-size:9px;
+      font-weight:700;
+      letter-spacing:.23em;
+      color:#535353;
+    }
+
+
+    /* PHOTO */
+
+    .home-photo-side{
+      min-height:590px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .photo-circle{
+      position:absolute;
+      width:475px;
+      height:475px;
+      border-radius:50%;
+      border:1px solid rgba(105,108,224,.09);
+    }
+
+    .photo-arch{
+      width:455px;
+      height:545px;
+      overflow:hidden;
+      border-radius:235px 235px 24px 24px;
+      background:#e6e6e4;
+      position:relative;
+      z-index:2;
+    }
+
+    .photo-arch img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 24%;
+    }
+
+    .experience-circle{
+      position:absolute;
+      left:14px;
+      bottom:70px;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:#696ce0;
+      color:#fff;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      z-index:4;
+      border:5px solid #f8f7f4;
+    }
+
+    .experience-circle strong{
+      display:block;
+      font-size:34px;
+      line-height:1;
+      font-weight:800;
+    }
+
+    .experience-circle span{
+      display:block;
+      margin-top:6px;
+      font-size:9px;
+      line-height:1.25;
+      font-weight:500;
+    }
+
+
+    /* DARK MODE */
+
+    body.dark-mode{
+      background:#101116;
+      color:#fff;
+    }
+
+    body.dark-mode .home-header{
+      background:#101116;
+    }
+
+    body.dark-mode .home-main{
+      background:
+        radial-gradient(circle at 82% 25%,rgba(105,108,224,.12),transparent 28%),
+        radial-gradient(circle at 20% 80%,rgba(255,255,255,.025),transparent 20%),
+        #101116;
+    }
+
+    body.dark-mode .home-main:before,
+    body.dark-mode .home-main:after,
+    body.dark-mode .photo-circle{
+      border-color:rgba(137,140,255,.08);
+    }
+
+    body.dark-mode .home-main{
+      background-color:#101116;
+      background-image:
+        radial-gradient(circle at 10% 20%,rgba(255,255,255,.55) 0 1px,transparent 1.5px),
+        radial-gradient(circle at 35% 65%,rgba(255,255,255,.28) 0 1px,transparent 1.5px),
+        radial-gradient(circle at 70% 15%,rgba(255,255,255,.22) 0 1px,transparent 1.5px),
+        radial-gradient(circle at 85% 75%,rgba(255,255,255,.20) 0 1px,transparent 1.5px),
+        radial-gradient(circle at 82% 25%,rgba(105,108,224,.12),transparent 28%);
+      background-size:auto;
+    }
+
+    body.dark-mode .home-brand{
+      color:#fff;
+    }
+
+    body.dark-mode .home-brand span{
+      color:#8386ff;
+    }
+
+    body.dark-mode .home-links a{
+      color:#b7b8c0;
+    }
+
+    body.dark-mode .home-links a:hover,
+    body.dark-mode .home-links a.active{
+      color:#fff;
+    }
+
+    body.dark-mode .theme-toggle{
+      background:#181920;
+      border-color:#30313a;
+      color:#fff;
+    }
+
+    body.dark-mode .home-title .im{
+      color:#fff;
+    }
+
+    body.dark-mode .home-role{
+      color:#dedee4;
+    }
+
+    body.dark-mode .home-tag{
+      background:#171820;
+      border-color:#2d2f39;
+      color:#d0d2da;
+    }
+
+    body.dark-mode .social-label{
+      color:#c3c4cb;
+    }
+
+    body.dark-mode .social-line{
+      background:#676872;
+    }
+
+    body.dark-mode .social-circle{
+      border-color:#666aa5;
+      color:#8b91ff;
+    }
+
+    body.dark-mode .experience-circle{
+      border-color:#101116;
+    }
+
+    body.dark-mode .photo-arch{
+      background:#1b1c22;
+    }
+
+
+    /* RESPONSIVE */
+
+    @media(max-width:980px){
+
+      .home-hero{
+        grid-template-columns:1fr;
+        gap:42px;
+      }
+
+      .home-copy{
+        text-align:center;
+      }
+
+      .home-title,
+      .home-tags,
+      .social-area{
+        justify-content:center;
+      }
+
+      .home-photo-side{
+        margin-top:20px;
+      }
+
+    }
+
+    @media(max-width:650px){
+
+      .home-nav{
+        height:72px;
+      }
+
+      .home-links{
+        gap:14px;
+      }
+
+      .home-links a:nth-child(2),
+      .home-links a:nth-child(3),
+      .home-links a:nth-child(4){
+        display:none;
+      }
+
+      .home-title{
+        font-size:58px;
+        gap:10px;
+      }
+
+      .home-title .name-highlight{
+        padding:9px 21px 12px;
+      }
+
+      .home-role{
+        font-size:16px;
+      }
+
+      .home-photo-side{
+        min-height:455px;
+      }
+
+      .photo-circle{
+        width:350px;
+        height:350px;
+      }
+
+      .photo-arch{
+        width:320px;
+        height:410px;
+      }
+
+      .experience-circle{
+        width:94px;
+        height:94px;
+        left:2px;
+        bottom:40px;
+      }
+
+      .experience-circle strong{
+        font-size:27px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">LG</span>
-      <span class="brand-copy"><strong>Lavanya Gaddam</strong><small>Data Engineer</small></span>
+
+
+<header class="home-header">
+
+  <div class="container home-nav">
+
+    <a class="home-brand" href="index.html">
+
+      Lavanya
+      <span>Gaddam</span>
+      <i class="brand-dot"></i>
+
     </a>
-    <nav class="nav-links">
-      <a class="active" href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="journey.html">Journey</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
+
+
+    <nav class="home-links">
+
+      <a class="active" href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="portfolio.html">
+        Portfolio
+      </a>
+
+      <a href="journey.html">
+        Journey
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch theme"
+      >
+        ☾
+      </button>
+
     </nav>
-    <a class="nav-cta" href="contact.html">Let's Connect ↗</a>
+
   </div>
+
 </header>
 
-<main class="home">
-  <div class="container home-grid">
-    <section class="hero-copy">
-      <div class="availability">OPEN TO OPPORTUNITIES</div>
-      <div class="hi">Hi, I’m <span class="wave">👋</span></div>
-      <h1 class="name"><span class="first">Lavanya</span><span class="last">Gaddam</span></h1>
-      <div class="role">Data Engineer</div>
-      <p class="lead">I build reliable data systems that move information from <strong>source to insight.</strong></p>
-      <p class="desc">Python · SQL · PySpark · Kafka · Databricks · Snowflake · Azure · AWS</p>
-      <div class="facts">
-        <span class="fact">📍 Tampa, FL</span>
-        <span class="fact">💼 4+ Years</span>
-        <span class="fact">🎓 MS Computer Science</span>
+
+
+<main class="home-main">
+
+  <div class="container home-hero">
+
+
+    <section class="home-copy">
+
+
+      <h1 class="home-title">
+
+        <span class="im">
+          I'm
+        </span>
+
+        <span class="name-highlight">
+          Lavanya
+        </span>
+
+      </h1>
+
+
+      <p class="home-role">
+        Data Engineer
+      </p>
+
+
+      <div class="home-tags">
+
+        <span class="home-tag">
+          📍 Tampa, FL
+        </span>
+
+        <span class="home-tag">
+          💼 Data Engineer
+        </span>
+
+        <span class="home-tag">
+          🎓 MS in Computer Science
+        </span>
+
+        <span class="home-tag">
+          💻 Python · PySpark · Azure · AWS
+        </span>
+
       </div>
-      <div class="actions">
-        <a class="btn primary" href="portfolio.html">View My Work ↗</a>
-        <a
-  class="btn secondary"
-  href="https://www.linkedin.com/in/lavanyagaddam05"
-  target="_blank"
-  rel="noopener"
->
-  LinkedIn ↗
-</a>
-        <a class="btn secondary" href="about.html">About Me</a>
+
+
+      <a
+        class="home-about"
+        href="about.html"
+      >
+
+        About Me
+
+        <span class="home-about-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <div class="social-area">
+
+
+        <div class="social-circles">
+
+          <a
+            class="social-circle"
+            href="https://www.linkedin.com/in/lavanyagaddam05"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            in
+          </a>
+
+          <a
+            class="social-circle"
+            href="https://github.com/glavanya0110-spec"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            GH
+          </a>
+
+          <a
+            class="social-circle"
+            href="tel:+16562155913"
+            aria-label="Phone"
+          >
+            ☎
+          </a>
+
+        </div>
+
+
+        <span class="social-line"></span>
+
+        <span class="social-label">
+          FIND ME ON
+        </span>
+
+
       </div>
+
+
     </section>
 
-    <section class="photo-wrap">
-      <div class="photo-glow"></div>
-      <div class="arch"><img src="lavanya-profile.png" alt="Lavanya Gaddam"></div>
-      <div class="badge"><div><strong>4+</strong><span>YEARS<br>EXPERIENCE</span></div></div>
+
+
+    <section class="home-photo-side">
+
+
+      <div class="photo-circle"></div>
+
+
+      <div class="photo-arch">
+
+        <img
+          src="lavanya-profile.png"
+          alt="Lavanya Gaddam"
+        >
+
+      </div>
+
+
+      <div class="experience-circle">
+
+        <div>
+
+          <strong>
+            4+
+          </strong>
+
+          <span>
+            Years of<br>
+            Experience
+          </span>
+
+        </div>
+
+      </div>
+
+
     </section>
+
+
   </div>
+
 </main>
 
-<footer><div class="container foot"><span>© 2026 Lavanya Gaddam</span><span>Data Engineer · Tampa, Florida</span></div></footer>
+
+
+<script>
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+  const savedTheme =
+    localStorage.getItem("portfolio-theme");
+
+
+  if(savedTheme === "dark"){
+
+    document.body.classList.add("dark-mode");
+
+    themeToggle.textContent = "☀";
+
+  }
+
+
+  themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    const isDark =
+      document.body.classList.contains("dark-mode");
+
+    themeToggle.textContent =
+      isDark ? "☀" : "☾";
+
+    localStorage.setItem(
+      "portfolio-theme",
+      isDark ? "dark" : "light"
+    );
+
+  });
+
+</script>
+
+
 </body>
+
 </html>
