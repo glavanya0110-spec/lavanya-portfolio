@@ -36,22 +36,26 @@
     .featured-grid,.github-grid{position:relative!important;inset:auto!important;transform:none!important;display:grid;gap:20px;align-items:start}
     .featured-grid{grid-template-columns:1fr}
     .github-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .repo-card{position:relative!important;inset:auto!important;transform:none!important;display:flex;flex-direction:column;width:100%!important;min-height:225px;margin:0!important;border:1px solid #dedfeb;border-radius:16px;background:rgba(255,255,255,.84);overflow:hidden;box-shadow:0 12px 30px rgba(70,72,112,.07)}
-    .repo-card.featured{grid-column:1/-1;min-height:210px;border:2px solid #7ca4c4;background:linear-gradient(135deg,rgba(249,253,255,.97),rgba(230,241,250,.94));box-shadow:0 16px 34px rgba(50,98,133,.12)}
-    .featured-grid .repo-card:nth-child(2){border-color:#72b18d;background:linear-gradient(135deg,rgba(250,255,252,.97),rgba(228,244,234,.94));box-shadow:0 16px 34px rgba(48,119,78,.11)}
-    .repo-card.featured .repo-content{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(250px,.7fr);grid-template-rows:auto auto auto 1fr auto;column-gap:28px;row-gap:0;align-items:start;padding:16px 18px}
+    .repo-card{position:relative!important;inset:auto!important;transform:none!important;display:flex;flex-direction:column;width:100%!important;min-height:225px;margin:0!important;border:0;border-top:2px solid #9a91d5;border-radius:16px;background:rgba(255,255,255,.84);overflow:hidden;box-shadow:0 12px 30px rgba(70,72,112,.07)}
+    .repo-card.featured{grid-column:1/-1;min-height:210px;border:0;border-top:3px solid #6f9fbe;background:linear-gradient(135deg,rgba(249,253,255,.97),rgba(230,241,250,.94));box-shadow:0 16px 34px rgba(50,98,133,.12)}
+    .featured-grid .repo-card:nth-child(2){border-top-color:#63a47f;background:linear-gradient(135deg,rgba(250,255,252,.97),rgba(228,244,234,.94));box-shadow:0 16px 34px rgba(48,119,78,.11)}
+    .repo-card.featured .repo-content{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(250px,.7fr);grid-template-rows:auto auto auto 1fr auto auto;column-gap:28px;row-gap:0;align-items:start;padding:16px 18px}
     .repo-card.featured .repo-meta{grid-column:1;grid-row:1}
     .repo-card.featured .repo-kicker{grid-column:1;grid-row:2}
     .repo-card.featured h3{grid-column:1;grid-row:3;color:#243447!important;opacity:1!important;visibility:visible!important}
     .repo-card.featured .repo-description{grid-column:1;grid-row:4}
+    .repo-card.featured .repo-features{grid-column:1;grid-row:5}
     .repo-kicker{margin:8px 0 0;color:#55748f;font-family:"Inter",Arial,sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .repo-features{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0 0}
+    .repo-feature{padding:6px 11px;border-radius:999px;background:#4f7894;color:#fff;font-family:"Inter",Arial,sans-serif;font-size:.68rem;font-weight:700}
+    .featured-grid .repo-card:nth-child(2) .repo-feature{background:#4c8965}
     .featured-grid .repo-card:nth-child(2) .repo-kicker{color:#3f7f5a}
     .repo-card.featured h3{font-size:1.24rem!important;margin-top:5px!important}
     .repo-card.featured .repo-description{max-width:none;color:#3f4c5d;font-size:.78rem;line-height:1.5}
-    .repo-card.featured .repo-topics{grid-column:2;grid-row:1/5;align-self:stretch;align-content:center;margin:0;padding:32px 13px 12px;border:1px solid #dce5ed;border-radius:13px;background:rgba(228,239,247,.86);position:relative}
+    .repo-card.featured .repo-topics{grid-column:2;grid-row:1/6;align-self:stretch;align-content:center;margin:0;padding:32px 13px 12px;border:1px solid #dce5ed;border-radius:13px;background:rgba(228,239,247,.86);position:relative}
     .repo-card.featured .repo-topics:before{content:"TECH STACK";position:absolute;top:13px;left:15px;color:#667085;font-family:"Inter",Arial,sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em}
     .featured-grid .repo-card:nth-child(2) .repo-topics{background:rgba(226,242,232,.9);border-color:#d3e7d9}
-    .repo-card.featured .repo-footer{grid-column:2;grid-row:5;align-self:end;flex-direction:column;align-items:stretch;justify-content:flex-end;width:100%;margin:10px 0 0;padding:0;border:0;background:transparent}
+    .repo-card.featured .repo-footer{grid-column:2;grid-row:6;align-self:end;flex-direction:column;align-items:stretch;justify-content:flex-end;width:100%;margin:10px 0 0;padding:0;border:0;background:transparent}
     .repo-card.featured .repo-stats{width:100%;justify-content:flex-start;margin-bottom:4px}
     .repo-card.featured .repo-actions{flex-direction:column}.repo-card.featured .repo-link{text-align:center}
     .github-grid .repo-card:nth-child(3n+1){background:rgba(239,246,252,.92)}
@@ -66,7 +70,8 @@
     .repo-status.live{background:#e5f6eb;color:#247447}
     .repo-card h3{position:static!important;transform:none!important;margin:11px 0 7px!important;font-size:1.12rem!important;line-height:1.22!important;letter-spacing:-.025em}
     .repo-description{margin:0;color:#60697a;font-family:"Inter",Arial,sans-serif;font-size:.79rem;line-height:1.5}
-    .repo-topics{display:flex;flex-wrap:wrap;gap:5px;margin:11px 0}.repo-topic{padding:4px 7px;border:1px solid #dfe2ec;border-radius:7px;color:#596274;font-family:"Inter",Arial,sans-serif;font-size:.63rem}
+    .repo-topics{display:flex;flex-wrap:wrap;gap:5px;margin:11px 0}.repo-topic{padding:4px 7px;border:1px solid #bfd5e5;border-radius:7px;background:#e7f2f9;color:#3f6279;font-family:"Inter",Arial,sans-serif;font-size:.63rem}
+    .featured-grid .repo-card:nth-child(2) .repo-topic{border-color:#b9d9c5;background:#e5f3ea;color:#416d52}
     .repo-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:12px;border-top:1px solid #ececf2}
     .repo-stats{display:flex;gap:14px;color:#7b8494;font-family:"Inter",Arial,sans-serif;font-size:.76rem}
     .repo-actions{display:flex;gap:8px}.repo-link{padding:9px 12px;border-radius:10px;background:#6674ed;color:#fff;font-family:"Inter",Arial,sans-serif;font-size:.75rem;font-weight:600}.repo-link.secondary{border:1px solid #d9dbea;background:#fff;color:#4f596b}
@@ -83,7 +88,9 @@
     body.dark-mode .projects-heading p{color:#9da8ba}
     body.dark-mode .filter-button{border-color:#313a50;background:#151b2b;color:#b7c0d1}
     body.dark-mode .filter-button.active{border-color:#6674ed;background:#6674ed;color:#fff}
-    body.dark-mode .repo-card{border-color:#30384c;background:rgba(18,24,41,.9);box-shadow:none}
+    body.dark-mode .repo-card{border:0;border-top:2px solid #7468bd;background:rgba(18,24,41,.9);box-shadow:none}
+    body.dark-mode .repo-card.featured{border:0;border-top:3px solid #6f9fbe}
+    body.dark-mode .featured-grid .repo-card:nth-child(2){border-top-color:#63a47f}
     body.dark-mode .repo-card-top{border-bottom-color:#30384c;background:#121829}
     body.dark-mode .repo-description{color:#aab4c7}
     body.dark-mode .repo-card.featured h3{color:#f3f6fb!important}
@@ -91,7 +98,8 @@
     body.dark-mode .repo-kicker{color:#8eb8d7}
     body.dark-mode .repo-status{background:#3b3118;color:#f4cf72}
     body.dark-mode .repo-status.live{background:#183b2a;color:#81d5a4}
-    body.dark-mode .repo-topic{border-color:#343d52;color:#b6bfd0}
+    body.dark-mode .repo-topic{border-color:#355a73;background:#1d3648;color:#a9cee5}
+    body.dark-mode .featured-grid .repo-card:nth-child(2) .repo-topic{border-color:#37634a;background:#1e3b2b;color:#a8d6b8}
     body.dark-mode .repo-card.featured .repo-topics{background:#182235;border-color:#303b51}
     body.dark-mode .featured-grid .repo-card:nth-child(2) .repo-topics{background:#172b25;border-color:#2e4a40}
     body.dark-mode .repo-footer{border-top-color:#30384c}
@@ -173,6 +181,7 @@
       title:"Real-Time Customer Analytics Pipeline",
       subtitle:"Streaming data engineering · analytics pipeline",
       description:"An end-to-end streaming pipeline that captures customer transaction events with Kafka, processes them using PySpark, and loads analytics-ready data into Snowflake. Airflow manages the workflow while Power BI presents the prepared data for near real-time reporting.",
+      features:["Customer Events","Stream Processing","Analytics"],
       topics:["Python","Kafka","PySpark","Snowflake","Airflow","Power BI"],
       categories:["python","pipeline","cloud"]
     },
@@ -180,6 +189,7 @@
       title:"Cloud ETL Data Pipeline",
       subtitle:"Cloud ETL · orchestration · data quality",
       description:"A cloud-focused ETL workflow designed to ingest data from multiple sources, apply Python and SQL transformations, validate data quality, and load trusted datasets for downstream analytics. Airflow coordinates the pipeline and Azure provides the cloud foundation.",
+      features:["Ingestion","Validation","Loading"],
       topics:["Python","SQL","Airflow","Azure","ETL"],categories:["python","pipeline","cloud"]
     },
     "snowflake-data-warehouse":{
@@ -242,6 +252,7 @@
     const title=details.title||repo.name.replace(/[-_]/g," ");
     const description=details.description||repo.description||"Open the repository to explore the project code and documentation.";
     const subtitle=details.subtitle||"Data engineering project";
+    const features=details.features||[];
     const topics=details.topics?.length?details.topics:(repo.topics||[]).slice(0,6);
     const categories=details.categories||[repo.language?.toLowerCase()].filter(Boolean);
     const homepage=repo.homepage&&repo.homepage.startsWith("http")?repo.homepage:"";
@@ -258,6 +269,7 @@
           <div class="repo-kicker">${safe(subtitle)}</div>
           <h3>${safe(title)}</h3>
           <p class="repo-description">${safe(description)}</p>
+          ${features.length?`<div class="repo-features">${features.map(feature=>`<span class="repo-feature">${safe(feature)}</span>`).join("")}</div>`:""}
           <div class="repo-topics">${topics.map(topic=>`<span class="repo-topic">${safe(topic)}</span>`).join("")}</div>
           <div class="repo-footer">
             <div class="repo-stats"><span>★ ${repo.stargazers_count||0}</span><span>⑂ ${repo.forks_count||0}</span></div>
