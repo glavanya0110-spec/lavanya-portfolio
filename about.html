@@ -63,18 +63,60 @@
     .build-icon{font-size:1.75rem}.build-card h3{margin:17px 0 16px;font-size:.92rem;letter-spacing:.06em}
     .build-skills{display:flex;flex-wrap:wrap;gap:8px}.build-skills span{padding:6px 9px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#c7d0e2;font-size:.73rem}
     .journey-timeline{position:relative;display:grid;grid-template-columns:1fr 78px 1fr;row-gap:36px;align-items:center}
-    .journey-timeline:before{content:"";grid-column:2;grid-row:1/7;justify-self:center;width:3px;height:100%;background:linear-gradient(#7784ff,#72d7ff,#7784ff)}
+    .journey-timeline:before{content:"";grid-column:2;grid-row:1/6;justify-self:center;width:3px;height:100%;background:linear-gradient(#7784ff,#72d7ff,#7784ff)}
     .journey-card{width:min(100%,430px);padding:0 0 24px;border:1px solid rgba(150,160,198,.32);border-radius:18px;background:rgba(20,27,49,.92);overflow:hidden}
     .journey-card>*{margin-left:23px;margin-right:23px}.journey-year{margin:0!important;padding:15px 23px;background:linear-gradient(90deg,#5967dc,rgba(89,103,220,.28));font-weight:800}
     .journey-location{margin-top:17px;color:#8793ff;font-size:.74rem;font-weight:800}.journey-card h3{margin-top:10px;margin-bottom:8px;font-size:1.02rem}.journey-card p{margin-top:0;margin-bottom:0;color:#aeb8cb;line-height:1.6;font-size:.88rem}
     .journey-left{grid-column:1;justify-self:end}.journey-right{grid-column:3;justify-self:start}.journey-dot{grid-column:2;justify-self:center;width:17px;height:17px;border:4px solid #0b1020;border-radius:50%;background:#9aa4ff;box-shadow:0 0 0 3px #7784ff}
-    .journey-card:nth-of-type(1){grid-row:1}.journey-timeline>.journey-dot:nth-child(2){grid-row:1}.journey-card:nth-of-type(2){grid-row:2}.journey-timeline>.journey-dot:nth-child(4){grid-row:2}.journey-card:nth-of-type(3){grid-row:3}
+    .journey-card:nth-of-type(1){grid-row:1}.journey-timeline>.journey-dot:nth-child(2){grid-row:1}
+    .journey-card:nth-of-type(2){grid-row:2}.journey-timeline>.journey-dot:nth-child(4){grid-row:2}
+    .journey-card:nth-of-type(3){grid-row:3}.journey-timeline>.journey-dot:nth-child(6){grid-row:3}
+    .journey-card:nth-of-type(4){grid-row:4}.journey-timeline>.journey-dot:nth-child(8){grid-row:4}
+    .journey-card:nth-of-type(5){grid-row:5}
     .education-grid,.certification-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
     .education-card,.certification-card{position:relative;min-height:190px;padding:28px;border:1px solid rgba(150,160,198,.3);border-radius:20px;background:linear-gradient(145deg,rgba(24,32,57,.9),rgba(12,17,32,.9))}
     .education-label{display:inline-block;margin-bottom:20px;padding:6px 10px;border-radius:999px;background:#626fe8;color:#fff;font-size:.7rem;font-weight:800}.education-card h3,.certification-card h3{margin:0 0 10px;font-size:1.15rem}.education-card p,.certification-card p{margin:0;color:#aeb8cb;line-height:1.55}.education-date{position:absolute;right:25px;bottom:24px;color:#8d99ff;font-size:.82rem;font-weight:800}
     .certification-icon{margin-bottom:19px;font-size:2rem}.certification-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .about-connect-section{padding:95px 0 110px;text-align:center}.connect-small{margin:0 0 12px;color:#96a0b6}.about-connect h2{margin:0;font-size:clamp(2rem,5vw,3.8rem)}
     .connect-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px}.connect-button{padding:12px 19px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(18,24,43,.82);font-weight:800}.connect-button:hover{border-color:#7784ff;color:#9ba5ff}
+
+    /* Light mode */
+    .about-page:not(.dark-mode){background:#edf3ff;color:#111827}
+    .about-page:not(.dark-mode) .about-header{background:rgba(240,245,255,.92);border-bottom-color:#dce5f5}
+    .about-page:not(.dark-mode) .about-brand{color:#111827}
+    .about-page:not(.dark-mode) .about-links a{color:#5d6678}
+    .about-page:not(.dark-mode) .about-links a:hover,
+    .about-page:not(.dark-mode) .about-links a.active{background:#6674ed;color:#fff}
+    .about-page:not(.dark-mode) .theme-toggle{border-color:#d8deea;color:#111827;background:#fff}
+    .about-page:not(.dark-mode) .about-space{background:radial-gradient(circle at 16% 11%,rgba(130,148,255,.22),transparent 28%),radial-gradient(circle at 84% 32%,rgba(176,190,255,.24),transparent 30%),linear-gradient(135deg,#eaf2ff 0%,#f3f5ff 48%,#e9f1ff 100%)}
+    .about-page:not(.dark-mode) .about-stars{background-image:radial-gradient(circle,#6674a0 1px,transparent 1.5px);opacity:.13}
+    .about-page:not(.dark-mode) .stars-two{opacity:.08}
+    .about-page:not(.dark-mode) .about-role{color:#252b38}
+    .about-page:not(.dark-mode) .about-description{color:#596376}
+    .about-page:not(.dark-mode) .about-info-tag{border-color:#cdd4f5;background:#eef1ff;color:#3e4860}
+    .about-page:not(.dark-mode) .about-social-links a,
+    .about-page:not(.dark-mode) .connect-button{border-color:#d6dce8;background:#fff;color:#273043}
+    .about-page:not(.dark-mode) .build-card,
+    .about-page:not(.dark-mode) .journey-card,
+    .about-page:not(.dark-mode) .education-card,
+    .about-page:not(.dark-mode) .certification-card{border-color:#dce1eb;background:rgba(255,255,255,.92);box-shadow:0 18px 45px rgba(49,57,83,.08)}
+    .about-page:not(.dark-mode) .build-skills span{border-color:#d8deea;color:#536078;background:#f8f9fc}
+    .about-page:not(.dark-mode) .journey-card p,
+    .about-page:not(.dark-mode) .education-card p,
+    .about-page:not(.dark-mode) .certification-card p,
+    .about-page:not(.dark-mode) .connect-small{color:#667085}
+    .about-page:not(.dark-mode) .journey-dot{border-color:#edf3ff}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(1){border-color:#cfc9ff}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(1) .journey-year{background:#e8e4ff;color:#5548c8}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(2){border-color:#bfe2f7}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(2) .journey-year{background:#def2ff;color:#176b9c}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(3){border-color:#bfe6d5}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(3) .journey-year{background:#dff5eb;color:#26775a}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(4){border-color:#f4cbd7}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(4) .journey-year{background:#ffe7ee;color:#ad4564}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(5){border-color:#eadba7}
+    .about-page:not(.dark-mode) .journey-card:nth-of-type(5) .journey-year{background:#fff1c7;color:#9a7417}
+
     @media(max-width:900px){.about-intro{grid-template-columns:1fr;gap:45px}.about-photo-circle{width:min(76vw,430px)}.about-intro-content{text-align:center;margin:auto}.about-info-tags,.about-social-links{justify-content:center}.build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-links{display:none}}
     @media(max-width:650px){.about-nav{height:66px}.about-intro-section{padding:52px 0 70px}.about-name{font-size:clamp(3.6rem,18vw,5rem)}.about-section{padding:68px 0}.section-number{font-size:4.4rem}.build-grid,.education-grid,.certification-grid{grid-template-columns:1fr}.journey-timeline{display:block;padding-left:30px}.journey-timeline:before{position:absolute;left:8px;top:0;width:2px;height:100%}.journey-card{width:100%;margin-bottom:24px}.journey-dot{display:none}.education-date{position:static;display:block;margin-top:20px}.theme-toggle{display:none}}
   </style>
@@ -189,23 +231,24 @@
       </div>
 
       <div class="about-intro-content">
-        <p class="about-hello">Hello, I'm</p>
+        <p class="about-hello">Hey there 👋 I’m</p>
         <h1 class="about-name">
           <span>Lavanya</span>
           <span class="outline-name">Gaddam</span>
         </h1>
-        <h2 class="about-role">DATA ENGINEER · BUILDING RELIABLE DATA SYSTEMS AT SCALE</h2>
+        <h2 class="about-role">DATA ENGINEER · TURNING COMPLEX DATA INTO RELIABLE SYSTEMS</h2>
         <p class="about-description">
-          I’m a Data Engineer with 4+ years of experience developing reliable
-          data pipelines, cloud-native data architectures, and scalable ETL/ELT
-          solutions for enterprise analytics. I work with Python, SQL, Apache
-          Spark, Kafka, Airflow, Databricks, Snowflake, Azure, and AWS to deliver
-          trusted, analytics-ready data.
+          My journey into data engineering began with Electronics and Communication
+          Engineering, where I became curious about how systems connect and share
+          information. After completing my MS in Computer Science, I turned that
+          curiosity into building reliable data pipelines and cloud-based analytics
+          systems. Today, I enjoy transforming complex data into trusted solutions
+          that help teams make better decisions.
         </p>
         <div class="about-info-tags">
-          <span class="about-info-tag">4+ Years of Experience</span>
-          <span class="about-info-tag">Tampa, Florida</span>
-          <span class="about-info-tag">MS in Computer Science</span>
+          <span class="about-info-tag">💼 4+ Years of Experience</span>
+          <span class="about-info-tag">📍 Tampa, Florida</span>
+          <span class="about-info-tag">🎓 MS in Computer Science</span>
         </div>
         <div class="about-social-links">
           <a href="https://www.linkedin.com/in/lavanyagaddam05" target="_blank" rel="noopener">LinkedIn</a>
@@ -496,9 +539,34 @@
 
 
 
-        <!-- EMBIBE -->
+        <!-- MASTER'S DEGREE -->
 
         <article class="journey-card journey-left">
+
+          <div class="journey-year">
+            🎓 2023 – 2025
+          </div>
+
+          <div class="journey-location">
+            TAMPA, FLORIDA
+          </div>
+
+          <h3>
+            MS in Computer Science · Saint Leo University
+          </h3>
+
+          <p>
+            Strengthened my knowledge of computer science,
+            cloud technologies, data systems, and scalable applications.
+          </p>
+
+        </article>
+
+        <div class="journey-dot"></div>
+
+        <!-- EMBIBE -->
+
+        <article class="journey-card journey-right">
 
           <div class="journey-year">
             💻 2020 – 2023
@@ -513,13 +581,36 @@
           </h3>
 
           <p>
-            Developed and supported data pipelines,
-            large-scale processing workflows,
-            and data-driven applications.
+            Developed and supported scalable data pipelines,
+            large-scale processing workflows, and analytics-ready datasets.
           </p>
 
         </article>
 
+        <div class="journey-dot"></div>
+
+        <!-- BACHELOR'S DEGREE -->
+
+        <article class="journey-card journey-left">
+
+          <div class="journey-year">
+            🎓 2017 – 2021
+          </div>
+
+          <div class="journey-location">
+            HYDERABAD, INDIA
+          </div>
+
+          <h3>
+            BTech in ECE · CVR College of Engineering
+          </h3>
+
+          <p>
+            Built my foundation in electronics, communication systems,
+            programming, and technical problem-solving.
+          </p>
+
+        </article>
 
       </div>
 
