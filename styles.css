@@ -126,12 +126,33 @@ body.about-page.dark-mode .about-main,
 body.about-page.dark-mode .about-space,
 body.portfolio-body.dark-mode .portfolio-page,
 body.portfolio-body.dark-mode .portfolio-effects {
-  background: radial-gradient(circle at 78% 72%, rgba(52, 42, 112, .1), transparent 28%), #090e14 !important;
+  background: radial-gradient(circle at 78% 72%, rgba(52, 42, 112, .1), transparent 28%) !important;
+}
+
+body.dark-mode .space-effects,
+body.about-page.dark-mode .about-space,
+body.portfolio-body.dark-mode .portfolio-effects {
+  display: block !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+body.dark-mode .home-main,
+body.about-page.dark-mode .about-main,
+body.portfolio-body.dark-mode .portfolio-page {
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 body.dark-mode .home-header,
 body.about-page.dark-mode .about-header,
 body.portfolio-body.dark-mode .portfolio-header {
+  position: relative !important;
+  top: auto !important;
+  z-index: 100 !important;
   background: rgba(9, 14, 20, .93) !important;
   backdrop-filter: blur(10px) !important;
 }
@@ -313,9 +334,9 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
 }
 
 @keyframes sharedStarBlink {
-  0%   { opacity: .18; filter: brightness(.8) drop-shadow(0 0 0 transparent); }
-  45%  { opacity: .48; filter: brightness(1.25) drop-shadow(0 0 2px rgba(255,255,255,.6)); }
-  100% { opacity: .9; filter: brightness(1.8) drop-shadow(0 0 5px rgba(255,255,255,.95)); }
+  0%   { opacity: .28; filter: brightness(.9) drop-shadow(0 0 1px rgba(255,255,255,.25)); }
+  45%  { opacity: .62; filter: brightness(1.45) drop-shadow(0 0 3px rgba(255,255,255,.75)); }
+  100% { opacity: 1; filter: brightness(2) drop-shadow(0 0 6px rgba(255,255,255,1)); }
 }
 
 /* Rockets move only with the dark/night theme. */
