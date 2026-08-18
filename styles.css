@@ -313,9 +313,9 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
 }
 
 @keyframes sharedStarBlink {
-  0%   { opacity: .1; filter: drop-shadow(0 0 0 transparent); }
-  48%  { opacity: .25; }
-  100% { opacity: .52; filter: drop-shadow(0 0 2px rgba(255,255,255,.65)); }
+  0%   { opacity: .18; filter: brightness(.8) drop-shadow(0 0 0 transparent); }
+  45%  { opacity: .48; filter: brightness(1.25) drop-shadow(0 0 2px rgba(255,255,255,.6)); }
+  100% { opacity: .9; filter: brightness(1.8) drop-shadow(0 0 5px rgba(255,255,255,.95)); }
 }
 
 /* Rockets move only with the dark/night theme. */
