@@ -26,6 +26,27 @@
     .portfolio-eyebrow:before{content:"";width:30px;height:2px;background:#6674ed}
     .portfolio-intro h1{margin:0;color:#1b1f29;font-size:clamp(2.8rem,6vw,5.2rem);line-height:1;letter-spacing:-.055em}
     .portfolio-intro p{margin:16px auto 0;color:#697386;font-family:"Inter",Arial,sans-serif;font-size:1rem}
+    .github-projects{padding:0 0 30px}
+    .projects-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}
+    .projects-heading h2{margin:0;font-size:clamp(1.7rem,3vw,2.35rem);letter-spacing:-.035em}
+    .projects-heading p{margin:7px 0 0;color:#6b7280;font-family:"Inter",Arial,sans-serif;font-size:.9rem}
+    .project-filters{display:flex;flex-wrap:wrap;gap:9px}
+    .filter-button{padding:8px 13px;border:1px solid #d9dbea;border-radius:999px;background:rgba(255,255,255,.7);color:#4b5563;font-family:"Inter",Arial,sans-serif;font-size:.76rem;font-weight:600;cursor:pointer}
+    .filter-button.active{border-color:#6674ed;background:#6674ed;color:#fff}
+    .github-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .repo-card{display:flex;flex-direction:column;min-height:310px;border:1px solid #dedfeb;border-radius:20px;background:rgba(255,255,255,.78);overflow:hidden;box-shadow:0 18px 42px rgba(70,72,112,.08)}
+    .repo-card-top{height:38px;display:flex;align-items:center;gap:6px;padding:0 17px;border-bottom:1px solid #e8e8f0;background:rgba(247,247,251,.82)}
+    .window-dot{width:9px;height:9px;border-radius:50%}.window-dot.red{background:#ef7474}.window-dot.yellow{background:#e9bd55}.window-dot.green{background:#72bf72}
+    .repo-content{display:flex;flex:1;flex-direction:column;padding:22px}
+    .repo-meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .repo-language{padding:6px 9px;border-radius:999px;background:#e9efff;color:#4265a8;font-family:"Inter",Arial,sans-serif;font-size:.7rem;font-weight:600}
+    .repo-card h3{margin:16px 0 9px;font-size:1.35rem;letter-spacing:-.03em}
+    .repo-description{margin:0;color:#60697a;font-family:"Inter",Arial,sans-serif;font-size:.88rem;line-height:1.65}
+    .repo-topics{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}.repo-topic{padding:6px 9px;border:1px solid #dfe2ec;border-radius:8px;color:#596274;font-family:"Inter",Arial,sans-serif;font-size:.69rem}
+    .repo-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:auto;padding-top:18px;border-top:1px solid #ececf2}
+    .repo-stats{display:flex;gap:14px;color:#7b8494;font-family:"Inter",Arial,sans-serif;font-size:.76rem}
+    .repo-actions{display:flex;gap:8px}.repo-link{padding:9px 12px;border-radius:10px;background:#6674ed;color:#fff;font-family:"Inter",Arial,sans-serif;font-size:.75rem;font-weight:600}.repo-link.secondary{border:1px solid #d9dbea;background:#fff;color:#4f596b}
+    .projects-status{grid-column:1/-1;padding:38px;border:1px dashed #ced3df;border-radius:18px;text-align:center;color:#6b7280;font-family:"Inter",Arial,sans-serif}
     body.dark-mode{background:#090d1a;color:#f8fafc}
     body.dark-mode .portfolio-header{background:rgba(9,13,26,.82);backdrop-filter:blur(14px)}
     body.dark-mode .portfolio-brand .brand-first{color:#fff}
@@ -34,7 +55,16 @@
     body.dark-mode .theme-toggle{background:#141a2a;border-color:#30384c;color:#fff}
     body.dark-mode .portfolio-intro h1{color:#f8fafc}
     body.dark-mode .portfolio-intro p{color:#aab4c7}
-    @media(max-width:760px){.portfolio-links{display:none}.portfolio-nav{height:66px}.portfolio-page .page-inner{padding-top:52px}.portfolio-intro{margin-bottom:48px}.portfolio-intro h1{font-size:clamp(2.6rem,15vw,4rem)}}
+    body.dark-mode .projects-heading p{color:#9da8ba}
+    body.dark-mode .filter-button{border-color:#313a50;background:#151b2b;color:#b7c0d1}
+    body.dark-mode .filter-button.active{border-color:#6674ed;background:#6674ed;color:#fff}
+    body.dark-mode .repo-card{border-color:#30384c;background:rgba(18,24,41,.9);box-shadow:none}
+    body.dark-mode .repo-card-top{border-bottom-color:#30384c;background:#121829}
+    body.dark-mode .repo-description{color:#aab4c7}
+    body.dark-mode .repo-topic{border-color:#343d52;color:#b6bfd0}
+    body.dark-mode .repo-footer{border-top-color:#30384c}
+    body.dark-mode .repo-link.secondary{border-color:#394258;background:#151b2b;color:#c4ccda}
+    @media(max-width:760px){.portfolio-links{display:none}.portfolio-nav{height:66px}.portfolio-page .page-inner{padding-top:52px}.portfolio-intro{margin-bottom:48px}.portfolio-intro h1{font-size:clamp(2.6rem,15vw,4rem)}.projects-heading{align-items:flex-start;flex-direction:column}.github-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body class="portfolio-body">
@@ -64,31 +94,22 @@
       <p>Explore my data engineering work and the systems behind each project.</p>
     </section>
 
-    <section class="project-showcase">
-      <div class="project-top">
+    <section class="github-projects">
+      <div class="projects-heading">
         <div>
-          <span class="project-label">FEATURED PROJECT</span>
-          <h2>Real-Time Customer Analytics Pipeline</h2>
-          <p>Streaming customer events from ingestion to analytics-ready insights.</p>
+          <h2>Data Engineering Projects</h2>
+          <p>Public GitHub repositories relevant to my Data Engineer role.</p>
         </div>
-        <div class="project-number">01</div>
+        <div class="project-filters">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="python">Python</button>
+          <button class="filter-button" type="button" data-filter="pipeline">Data Pipelines</button>
+          <button class="filter-button" type="button" data-filter="cloud">Cloud</button>
+        </div>
       </div>
-
-      <div class="flow">
-        <div><b>Kafka</b><span>Ingest</span></div><i>→</i>
-        <div><b>Spark</b><span>Process</span></div><i>→</i>
-        <div><b>Snowflake</b><span>Store</span></div><i>→</i>
-        <div><b>Airflow</b><span>Orchestrate</span></div><i>→</i>
-        <div><b>Power BI</b><span>Visualize</span></div>
+      <div class="github-grid" id="githubGrid">
+        <div class="projects-status">Loading GitHub projects…</div>
       </div>
-
-      <div class="project-metrics">
-        <div><strong>5M</strong><span>events/day</span></div>
-        <div><strong>Real-time</strong><span>streaming design</span></div>
-        <div><strong>End-to-end</strong><span>data flow</span></div>
-      </div>
-
-      <a class="btn portfolio-btn" href="https://github.com/glavanya0110-spec/real-time-customer-analytics" target="_blank" rel="noopener">View on GitHub ↗</a>
     </section>
   </div>
 </main>
@@ -107,6 +128,95 @@
     themeToggle.textContent=dark?"☀":"☾";
     localStorage.setItem("portfolio-theme",dark?"dark":"light");
   });
+
+  const githubGrid=document.getElementById("githubGrid");
+  const filters=document.querySelectorAll(".filter-button");
+  let portfolioRepos=[];
+
+  const curated={
+    "real-time-customer-analytics":{
+      title:"Real-Time Customer Analytics Pipeline",
+      description:"A streaming data pipeline that processes customer transaction events and delivers analytics-ready data for near real-time reporting.",
+      topics:["Python","Kafka","PySpark","Snowflake","Airflow","Power BI"],
+      categories:["python","pipeline","cloud"]
+    }
+  };
+
+  const relevanceWords=["data","analytics","pipeline","etl","kafka","spark","snowflake","airflow","databricks","azure","aws","python","sql","warehouse","stream"];
+
+  function safe(value){
+    return String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[char]));
+  }
+
+  function relevant(repo){
+    if(repo.fork||repo.archived) return false;
+    if(["glavanya0110-spec","lavanya-portfolio"].includes(repo.name)) return false;
+    const text=[repo.name,repo.description,...(repo.topics||[])].join(" ").toLowerCase();
+    return relevanceWords.some(word=>text.includes(word));
+  }
+
+  function card(repo){
+    const details=curated[repo.name]||{};
+    const title=details.title||repo.name.replace(/[-_]/g," ");
+    const description=details.description||repo.description||"Open the repository to explore the project code and documentation.";
+    const topics=details.topics?.length?details.topics:(repo.topics||[]).slice(0,6);
+    const categories=details.categories||[repo.language?.toLowerCase()].filter(Boolean);
+    const homepage=repo.homepage&&repo.homepage.startsWith("http")?repo.homepage:"";
+    return `
+      <article class="repo-card" data-categories="${safe(categories.join(" "))}">
+        <div class="repo-card-top">
+          <span class="window-dot red"></span><span class="window-dot yellow"></span><span class="window-dot green"></span>
+        </div>
+        <div class="repo-content">
+          <div class="repo-meta">
+            <span class="repo-language">${safe(repo.language||"Data Engineering")}</span>
+          </div>
+          <h3>${safe(title)}</h3>
+          <p class="repo-description">${safe(description)}</p>
+          <div class="repo-topics">${topics.map(topic=>`<span class="repo-topic">${safe(topic)}</span>`).join("")}</div>
+          <div class="repo-footer">
+            <div class="repo-stats"><span>★ ${repo.stargazers_count||0}</span><span>⑂ ${repo.forks_count||0}</span></div>
+            <div class="repo-actions">
+              <a class="repo-link secondary" href="${safe(repo.html_url)}#readme" target="_blank" rel="noopener">README</a>
+              <a class="repo-link" href="${safe(repo.html_url)}" target="_blank" rel="noopener">GitHub ↗</a>
+              ${homepage?`<a class="repo-link" href="${safe(homepage)}" target="_blank" rel="noopener">Live ↗</a>`:""}
+            </div>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function render(filter="all"){
+    const shown=portfolioRepos.filter(repo=>{
+      if(filter==="all") return true;
+      const categories=(curated[repo.name]?.categories||[]).join(" ");
+      const text=[categories,repo.language,...(repo.topics||[]),repo.name,repo.description].join(" ").toLowerCase();
+      return text.includes(filter);
+    });
+    githubGrid.innerHTML=shown.length?shown.map(card).join(""):'<div class="projects-status">No matching Data Engineering repositories yet.</div>';
+  }
+
+  filters.forEach(button=>button.addEventListener("click",()=>{
+    filters.forEach(item=>item.classList.remove("active"));
+    button.classList.add("active");
+    render(button.dataset.filter);
+  }));
+
+  fetch("https://api.github.com/users/glavanya0110-spec/repos?sort=updated&per_page=100")
+    .then(response=>{if(!response.ok) throw new Error("GitHub request failed");return response.json();})
+    .then(repos=>{portfolioRepos=repos.filter(relevant);render();})
+    .catch(()=>{
+      portfolioRepos=[{
+        name:"real-time-customer-analytics",
+        language:"Python",
+        topics:[],
+        description:"",
+        html_url:"https://github.com/glavanya0110-spec/real-time-customer-analytics",
+        stargazers_count:0,
+        forks_count:0
+      }];
+      render();
+    });
 </script>
 </body>
 </html>
