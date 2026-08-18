@@ -15,7 +15,7 @@
     .portfolio-nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
     .portfolio-brand{display:flex;align-items:center;gap:6px;font-size:1.28rem;font-weight:800}
     .portfolio-brand .brand-last{color:#6674ed}.portfolio-brand .brand-dot{width:8px;height:8px;border-radius:50%;background:#31bd6b}
-    .portfolio-links{display:flex;align-items:center;gap:10px}
+    .portfolio-links{display:flex;align-items:center;gap:14px}
     .portfolio-links a{padding:9px 14px;border-radius:9px;color:#5d6678;font-size:.9rem;font-weight:700}
     .portfolio-links a:hover,.portfolio-links a.active{background:#6674ed;color:#fff}
     .theme-toggle{width:40px;height:40px;border:1px solid #d8deea;border-radius:10px;background:#fff;color:#111827;cursor:pointer}
@@ -27,9 +27,10 @@
     .portfolio-intro h1{margin:0;color:#1b1f29;font-size:clamp(2.8rem,6vw,5.2rem);line-height:1;letter-spacing:-.055em}
     .portfolio-intro p{margin:16px auto 0;color:#697386;font-family:"Inter",Arial,sans-serif;font-size:1rem}
     .github-projects{position:relative!important;inset:auto!important;transform:none!important;width:min(1040px,100%);margin:0 auto!important;padding:0 0 30px!important}
-    .projects-heading{position:relative!important;inset:auto!important;transform:none!important;display:flex;align-items:end;justify-content:space-between;gap:28px;margin:0 0 24px!important;padding:0!important}
-    .projects-heading h2{margin:0!important;color:#1f2937!important;font-size:clamp(1.7rem,3vw,2.35rem)!important;line-height:1.1!important;letter-spacing:-.035em}
-    .projects-heading p{margin:7px 0 0;color:#6b7280;font-family:"Inter",Arial,sans-serif;font-size:.9rem}
+    .projects-heading{position:relative!important;inset:auto!important;transform:none!important;display:block;margin:0 0 18px!important;padding:0!important}
+    .featured-label{display:flex;align-items:center;gap:10px;color:#6674ed;font-family:"Inter",Arial,sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+    .featured-label:before{content:"✣";font-size:.85rem;letter-spacing:0}
+    .projects-heading p{margin:7px 0 0;color:#606b7c;font-family:"Inter",Arial,sans-serif;font-size:.86rem}
     .project-filters{position:static!important;transform:none!important;display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:30px 0 22px}
     .filter-button{padding:8px 13px;border:1px solid #d9dbea;border-radius:999px;background:rgba(255,255,255,.7);color:#4b5563;font-family:"Inter",Arial,sans-serif;font-size:.76rem;font-weight:600;cursor:pointer}
     .filter-button.active{border-color:#6674ed;background:#6674ed;color:#fff}
@@ -84,7 +85,6 @@
     body.dark-mode .theme-toggle{background:#141a2a;border-color:#30384c;color:#fff}
     body.dark-mode .portfolio-intro h1{color:#f8fafc}
     body.dark-mode .portfolio-intro p{color:#aab4c7}
-    body.dark-mode .projects-heading h2{color:#f8fafc!important}
     body.dark-mode .projects-heading p{color:#9da8ba}
     body.dark-mode .filter-button{border-color:#313a50;background:#151b2b;color:#b7c0d1}
     body.dark-mode .filter-button.active{border-color:#6674ed;background:#6674ed;color:#fff}
@@ -120,8 +120,6 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a class="active" href="portfolio.html">Portfolio</a>
-      <a href="journey.html">Journey</a>
-      <a href="contact.html">Contact</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Change theme">☾</button>
   </div>
@@ -138,7 +136,7 @@
     <section class="github-projects">
       <div class="projects-heading">
         <div>
-          <h2>Data Engineering Projects</h2>
+          <div class="featured-label">Featured Projects</div>
           <p>Public GitHub repositories relevant to my Data Engineer role.</p>
         </div>
       </div>
