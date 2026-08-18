@@ -11,7 +11,7 @@
   <style>
     body.portfolio-body{margin:0;font-family:"Manrope",Arial,sans-serif;background:radial-gradient(circle at 18% 14%,rgba(141,132,255,.14),transparent 30%),radial-gradient(circle at 82% 36%,rgba(188,181,255,.14),transparent 32%),linear-gradient(135deg,#f7f7fb 0%,#f2f2fa 50%,#f8f8fc 100%);color:#111827;transition:.3s ease}
     .portfolio-body .container{width:min(1120px,92%);margin-inline:auto}
-    .portfolio-header{position:sticky;top:0;z-index:50;background:transparent}
+    .portfolio-header{position:sticky!important;top:0!important;z-index:1000!important;background:rgba(247,247,251,.94)!important;backdrop-filter:blur(14px)}
     .portfolio-nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
     .portfolio-brand{display:flex;align-items:center;gap:6px;font-size:1.28rem;font-weight:800}
     .portfolio-brand .brand-last{color:#6674ed}.portfolio-brand .brand-dot{width:8px;height:8px;border-radius:50%;background:#31bd6b}
@@ -19,28 +19,29 @@
     .portfolio-links a{padding:9px 14px;border-radius:9px;color:#5d6678;font-size:.9rem;font-weight:700}
     .portfolio-links a:hover,.portfolio-links a.active{background:#6674ed;color:#fff}
     .theme-toggle{width:40px;height:40px;border:1px solid #d8deea;border-radius:10px;background:#fff;color:#111827;cursor:pointer}
-    .portfolio-page{min-height:calc(100vh - 74px);background:transparent}
+    .portfolio-page{position:relative!important;inset:auto!important;transform:none!important;min-height:calc(100vh - 74px);margin:0!important;padding:0!important;background:transparent}
     .portfolio-page .page-inner{padding:58px 0 82px}
-    .portfolio-intro{width:min(900px,100%);text-align:center;margin:0 auto 48px}
+    .portfolio-intro{position:relative!important;inset:auto!important;transform:none!important;width:min(900px,100%);text-align:center;margin:0 auto 58px!important;padding:0!important}
     .portfolio-eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:15px;color:#6674ed;font-family:"Inter",Arial,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.2em}
     .portfolio-eyebrow:before{content:"";width:30px;height:2px;background:#6674ed}
     .portfolio-intro h1{margin:0;color:#1b1f29;font-size:clamp(2.8rem,6vw,5.2rem);line-height:1;letter-spacing:-.055em}
     .portfolio-intro p{margin:16px auto 0;color:#697386;font-family:"Inter",Arial,sans-serif;font-size:1rem}
-    .github-projects{width:min(900px,100%);margin:0 auto;padding:0 0 30px}
-    .projects-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:24px}
+    .github-projects{position:relative!important;inset:auto!important;transform:none!important;width:min(900px,100%);margin:0 auto!important;padding:0 0 30px!important}
+    .projects-heading{position:relative!important;inset:auto!important;transform:none!important;display:flex;align-items:end;justify-content:space-between;gap:28px;margin:0 0 24px!important;padding:0!important}
     .projects-heading h2{margin:0!important;color:#1f2937!important;font-size:clamp(1.7rem,3vw,2.35rem)!important;line-height:1.1!important;letter-spacing:-.035em}
     .projects-heading p{margin:7px 0 0;color:#6b7280;font-family:"Inter",Arial,sans-serif;font-size:.9rem}
-    .project-filters{display:flex;flex-wrap:wrap;gap:9px}
+    .project-filters{position:static!important;transform:none!important;display:flex;flex-wrap:wrap;gap:9px}
     .filter-button{padding:8px 13px;border:1px solid #d9dbea;border-radius:999px;background:rgba(255,255,255,.7);color:#4b5563;font-family:"Inter",Arial,sans-serif;font-size:.76rem;font-weight:600;cursor:pointer}
     .filter-button.active{border-color:#6674ed;background:#6674ed;color:#fff}
-    .github-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start}
-    .repo-card{display:flex;flex-direction:column;width:100%;min-height:300px;border:1px solid #dedfeb;border-radius:20px;background:rgba(255,255,255,.84);overflow:hidden;box-shadow:0 18px 42px rgba(70,72,112,.08)}
+    .github-grid{position:relative!important;inset:auto!important;transform:none!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+    .repo-card{position:relative!important;inset:auto!important;transform:none!important;display:flex;flex-direction:column;width:100%!important;min-height:300px;margin:0!important;border:1px solid #dedfeb;border-radius:20px;background:rgba(255,255,255,.84);overflow:hidden;box-shadow:0 18px 42px rgba(70,72,112,.08)}
     .repo-card-top{height:38px;display:flex;align-items:center;gap:6px;padding:0 17px;border-bottom:1px solid #e8e8f0;background:rgba(247,247,251,.82)}
     .window-dot{width:9px;height:9px;border-radius:50%}.window-dot.red{background:#ef7474}.window-dot.yellow{background:#e9bd55}.window-dot.green{background:#72bf72}
-    .repo-content{display:flex;flex:1;flex-direction:column;padding:22px}
+    .repo-content{position:static!important;transform:none!important;display:flex;flex:1;flex-direction:column;padding:22px}
     .repo-meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .repo-language{padding:6px 9px;border-radius:999px;background:#e9efff;color:#4265a8;font-family:"Inter",Arial,sans-serif;font-size:.7rem;font-weight:600}
-    .repo-card h3{margin:16px 0 9px;font-size:1.35rem;letter-spacing:-.03em}
+    .repo-status{margin-left:8px;padding:6px 9px;border-radius:999px;background:#fff3d6;color:#946200;font-family:"Inter",Arial,sans-serif;font-size:.7rem;font-weight:700}
+    .repo-card h3{position:static!important;transform:none!important;margin:16px 0 9px!important;font-size:1.35rem!important;line-height:1.25!important;letter-spacing:-.03em}
     .repo-description{margin:0;color:#60697a;font-family:"Inter",Arial,sans-serif;font-size:.88rem;line-height:1.65}
     .repo-topics{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}.repo-topic{padding:6px 9px;border:1px solid #dfe2ec;border-radius:8px;color:#596274;font-family:"Inter",Arial,sans-serif;font-size:.69rem}
     .repo-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:auto;padding-top:18px;border-top:1px solid #ececf2}
@@ -62,6 +63,7 @@
     body.dark-mode .repo-card{border-color:#30384c;background:rgba(18,24,41,.9);box-shadow:none}
     body.dark-mode .repo-card-top{border-bottom-color:#30384c;background:#121829}
     body.dark-mode .repo-description{color:#aab4c7}
+    body.dark-mode .repo-status{background:#3b3118;color:#f4cf72}
     body.dark-mode .repo-topic{border-color:#343d52;color:#b6bfd0}
     body.dark-mode .repo-footer{border-top-color:#30384c}
     body.dark-mode .repo-link.secondary{border-color:#394258;background:#151b2b;color:#c4ccda}
@@ -140,8 +142,27 @@
       description:"A streaming data pipeline that processes customer transaction events and delivers analytics-ready data for near real-time reporting.",
       topics:["Python","Kafka","PySpark","Snowflake","Airflow","Power BI"],
       categories:["python","pipeline","cloud"]
+    },
+    "cloud-etl-pipeline":{
+      title:"Cloud ETL Data Pipeline",
+      description:"A cloud-focused ETL workflow for ingesting, transforming, validating, and loading analytics-ready data.",
+      topics:["Python","SQL","Airflow","Azure","ETL"],categories:["python","pipeline","cloud"]
+    },
+    "snowflake-data-warehouse":{
+      title:"Snowflake Analytics Warehouse",
+      description:"A dimensional data warehouse project designed for reliable reporting, data quality, and business analytics.",
+      topics:["Snowflake","SQL","Data Modeling","Power BI"],categories:["pipeline","cloud"]
+    },
+    "databricks-lakehouse":{
+      title:"Databricks Lakehouse Pipeline",
+      description:"A scalable batch-processing project using PySpark and Databricks to prepare trusted analytical datasets.",
+      topics:["PySpark","Databricks","Delta Lake","AWS"],categories:["python","pipeline","cloud"]
     }
   };
+
+  const plannedProjects=["cloud-etl-pipeline","snowflake-data-warehouse","databricks-lakehouse"].map(name=>({
+    name,language:"Data Engineering",topics:[],description:"",html_url:"",stargazers_count:0,forks_count:0,planned:true
+  }));
 
   const relevanceWords=["data","analytics","pipeline","etl","kafka","spark","snowflake","airflow","databricks","azure","aws","python","sql","warehouse","stream"];
 
@@ -171,6 +192,7 @@
         <div class="repo-content">
           <div class="repo-meta">
             <span class="repo-language">${safe(repo.language||"Data Engineering")}</span>
+            ${repo.planned?'<span class="repo-status">IN PROGRESS</span>':''}
           </div>
           <h3>${safe(title)}</h3>
           <p class="repo-description">${safe(description)}</p>
@@ -178,8 +200,7 @@
           <div class="repo-footer">
             <div class="repo-stats"><span>★ ${repo.stargazers_count||0}</span><span>⑂ ${repo.forks_count||0}</span></div>
             <div class="repo-actions">
-              <a class="repo-link secondary" href="${safe(repo.html_url)}#readme" target="_blank" rel="noopener">README</a>
-              <a class="repo-link" href="${safe(repo.html_url)}" target="_blank" rel="noopener">GitHub ↗</a>
+              ${repo.planned?'<span class="repo-link secondary">Coming soon</span>':`<a class="repo-link secondary" href="${safe(repo.html_url)}#readme" target="_blank" rel="noopener">README</a><a class="repo-link" href="${safe(repo.html_url)}" target="_blank" rel="noopener">GitHub ↗</a>`}
               ${homepage?`<a class="repo-link" href="${safe(homepage)}" target="_blank" rel="noopener">Live ↗</a>`:""}
             </div>
           </div>
@@ -205,7 +226,7 @@
 
   fetch("https://api.github.com/users/glavanya0110-spec/repos?sort=updated&per_page=100")
     .then(response=>{if(!response.ok) throw new Error("GitHub request failed");return response.json();})
-    .then(repos=>{portfolioRepos=repos.filter(relevant);render();})
+    .then(repos=>{portfolioRepos=[...repos.filter(relevant),...plannedProjects];render();})
     .catch(()=>{
       portfolioRepos=[{
         name:"real-time-customer-analytics",
@@ -215,7 +236,7 @@
         html_url:"https://github.com/glavanya0110-spec/real-time-customer-analytics",
         stargazers_count:0,
         forks_count:0
-      }];
+      },...plannedProjects];
       render();
     });
 </script>
