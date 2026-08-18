@@ -87,7 +87,7 @@
     .home-links{
       display:flex;
       align-items:center;
-      gap:36px;
+      gap:30px;
     }
 
     .home-links a{
@@ -175,11 +175,11 @@
       display:flex;
       align-items:center;
       flex-wrap:wrap;
-      gap:18px;
+      gap:14px;
 
-      font-size:clamp(76px,7.8vw,114px);
+      font-size:clamp(72px,7.4vw,108px);
       line-height:.92;
-      letter-spacing:-.075em;
+      letter-spacing:-.07em;
       font-weight:800;
     }
 
@@ -189,8 +189,8 @@
 
     .home-title .name-highlight{
       display:inline-block;
-      padding:12px 34px 16px;
-      border-radius:80px;
+      padding:10px 28px 14px;
+      border-radius:72px;
       background:#696ce0;
       color:#fff;
       font-weight:700;
@@ -206,9 +206,9 @@
     .home-tags{
       display:flex;
       flex-wrap:wrap;
-      gap:8px;
-      margin-top:18px;
-      max-width:660px;
+      gap:7px;
+      margin-top:16px;
+      max-width:610px;
     }
 
     .home-tag{
@@ -227,10 +227,10 @@
     .home-about{
       display:inline-flex;
       align-items:center;
-      gap:18px;
-      margin-top:25px;
-      padding:11px 13px 11px 22px;
-      border-radius:17px;
+      gap:16px;
+      margin-top:22px;
+      padding:10px 12px 10px 21px;
+      border-radius:16px;
       background:#696ce0;
       color:#fff;
       font-size:12px;
@@ -256,8 +256,8 @@
     .social-area{
       display:flex;
       align-items:center;
-      gap:16px;
-      margin-top:28px;
+      gap:14px;
+      margin-top:22px;
     }
 
     .social-circles{
@@ -302,7 +302,7 @@
     /* PHOTO */
 
     .home-photo-side{
-      min-height:590px;
+      min-height:550px;
       position:relative;
       display:flex;
       align-items:center;
@@ -311,20 +311,21 @@
 
     .photo-circle{
       position:absolute;
-      width:475px;
-      height:475px;
+      width:455px;
+      height:455px;
       border-radius:50%;
-      border:1px solid rgba(105,108,224,.09);
+      border:1px solid rgba(105,108,224,.08);
     }
 
     .photo-arch{
-      width:455px;
-      height:545px;
+      width:440px;
+      height:505px;
       overflow:hidden;
-      border-radius:235px 235px 24px 24px;
+      border-radius:225px 225px 24px 24px;
       background:#e6e6e4;
       position:relative;
       z-index:2;
+      transform:translateY(-12px);
     }
 
     .photo-arch img{
@@ -336,31 +337,36 @@
 
     .experience-circle{
       position:absolute;
-      left:14px;
-      bottom:70px;
-      width:120px;
-      height:120px;
+      left:24px;
+      bottom:74px;
+
+      width:108px;
+      height:108px;
+
       border-radius:50%;
       background:#696ce0;
       color:#fff;
+
       display:grid;
       place-items:center;
+
       text-align:center;
       z-index:4;
+
       border:5px solid #f8f7f4;
     }
 
     .experience-circle strong{
       display:block;
-      font-size:34px;
+      font-size:31px;
       line-height:1;
       font-weight:800;
     }
 
     .experience-circle span{
       display:block;
-      margin-top:6px;
-      font-size:9px;
+      margin-top:5px;
+      font-size:8px;
       line-height:1.25;
       font-weight:500;
     }
@@ -378,27 +384,20 @@
     }
 
     body.dark-mode .home-main{
-      background:
-        radial-gradient(circle at 82% 25%,rgba(105,108,224,.12),transparent 28%),
-        radial-gradient(circle at 20% 80%,rgba(255,255,255,.025),transparent 20%),
-        #101116;
+      background-color:#101116;
+
+      background-image:
+        radial-gradient(circle at 12% 18%,rgba(255,255,255,.35) 0 1px,transparent 1.4px),
+        radial-gradient(circle at 34% 68%,rgba(255,255,255,.18) 0 1px,transparent 1.4px),
+        radial-gradient(circle at 68% 16%,rgba(255,255,255,.16) 0 1px,transparent 1.4px),
+        radial-gradient(circle at 87% 74%,rgba(255,255,255,.14) 0 1px,transparent 1.4px),
+        radial-gradient(circle at 82% 25%,rgba(105,108,224,.10),transparent 28%);
     }
 
     body.dark-mode .home-main:before,
     body.dark-mode .home-main:after,
     body.dark-mode .photo-circle{
-      border-color:rgba(137,140,255,.08);
-    }
-
-    body.dark-mode .home-main{
-      background-color:#101116;
-      background-image:
-        radial-gradient(circle at 10% 20%,rgba(255,255,255,.55) 0 1px,transparent 1.5px),
-        radial-gradient(circle at 35% 65%,rgba(255,255,255,.28) 0 1px,transparent 1.5px),
-        radial-gradient(circle at 70% 15%,rgba(255,255,255,.22) 0 1px,transparent 1.5px),
-        radial-gradient(circle at 85% 75%,rgba(255,255,255,.20) 0 1px,transparent 1.5px),
-        radial-gradient(circle at 82% 25%,rgba(105,108,224,.12),transparent 28%);
-      background-size:auto;
+      border-color:rgba(137,140,255,.07);
     }
 
     body.dark-mode .home-brand{
