@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    body.portfolio-body{margin:0;font-family:"Manrope",Arial,sans-serif;background:radial-gradient(circle at 18% 14%,rgba(141,132,255,.14),transparent 30%),radial-gradient(circle at 82% 36%,rgba(188,181,255,.14),transparent 32%),linear-gradient(135deg,#f7f7fb 0%,#f2f2fa 50%,#f8f8fc 100%);color:#111827;transition:.3s ease}
+    body.portfolio-body{margin:0;font-family:"Manrope",Arial,sans-serif;background:radial-gradient(circle at 12% 18%,rgba(115,143,226,.18),transparent 31%),radial-gradient(circle at 88% 38%,rgba(162,137,224,.18),transparent 34%),linear-gradient(135deg,#f1f5fb 0%,#ececfa 52%,#f5f1fa 100%);color:#111827;transition:.3s ease}
     .portfolio-body .container{width:min(1120px,92%);margin-inline:auto}
     .portfolio-header{position:sticky!important;top:0!important;z-index:1000!important;background:rgba(247,247,251,.94)!important;backdrop-filter:blur(14px)}
     .portfolio-nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
@@ -40,10 +40,15 @@
     .repo-card.featured{grid-column:1/-1;min-height:245px;border-color:#9bb7cc}
     .featured-grid .repo-card:nth-child(2){border-color:#8fc6a6}
     .repo-card.featured .repo-content{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(190px,.55fr);column-gap:24px;align-items:center}
-    .repo-card.featured .repo-meta,.repo-card.featured h3,.repo-card.featured .repo-description,.repo-card.featured .repo-topics{grid-column:1}
-    .repo-card.featured .repo-footer{grid-column:2;grid-row:1/5;align-self:stretch;flex-direction:column;align-items:stretch;justify-content:flex-end;margin:0;padding:16px;border:1px solid #e2e7ee;border-radius:13px;background:rgba(238,244,248,.72)}
-    .featured-grid .repo-card:nth-child(2) .repo-footer{background:rgba(232,246,236,.74)}
+    .repo-card.featured .repo-meta,.repo-card.featured h3,.repo-card.featured .repo-description{grid-column:1}
+    .repo-card.featured .repo-topics{grid-column:2;grid-row:1/4;align-self:stretch;align-content:center;margin:0;padding:36px 15px 15px;border:1px solid #dce5ed;border-radius:13px;background:rgba(228,239,247,.86);position:relative}
+    .repo-card.featured .repo-topics:before{content:"TECH STACK";position:absolute;top:13px;left:15px;color:#667085;font-family:"Inter",Arial,sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em}
+    .featured-grid .repo-card:nth-child(2) .repo-topics{background:rgba(226,242,232,.9);border-color:#d3e7d9}
+    .repo-card.featured .repo-footer{grid-column:2;grid-row:4;align-self:end;flex-direction:column;align-items:stretch;justify-content:flex-end;margin:10px 0 0;padding:0;border:0;background:transparent}
     .repo-card.featured .repo-actions{flex-direction:column}.repo-card.featured .repo-link{text-align:center}
+    .github-grid .repo-card:nth-child(3n+1){background:rgba(239,246,252,.92)}
+    .github-grid .repo-card:nth-child(3n+2){background:rgba(244,240,252,.92)}
+    .github-grid .repo-card:nth-child(3n){background:rgba(238,248,242,.92)}
     .repo-card-top{height:38px;display:flex;align-items:center;gap:6px;padding:0 17px;border-bottom:1px solid #e8e8f0;background:rgba(247,247,251,.82)}
     .window-dot{width:9px;height:9px;border-radius:50%}.window-dot.red{background:#ef7474}.window-dot.yellow{background:#e9bd55}.window-dot.green{background:#72bf72}
     .repo-content{position:static!important;transform:none!important;display:flex;flex:1;flex-direction:column;padding:17px}
@@ -76,6 +81,8 @@
     body.dark-mode .repo-status{background:#3b3118;color:#f4cf72}
     body.dark-mode .repo-status.live{background:#183b2a;color:#81d5a4}
     body.dark-mode .repo-topic{border-color:#343d52;color:#b6bfd0}
+    body.dark-mode .repo-card.featured .repo-topics{background:#182235;border-color:#303b51}
+    body.dark-mode .featured-grid .repo-card:nth-child(2) .repo-topics{background:#172b25;border-color:#2e4a40}
     body.dark-mode .repo-footer{border-top-color:#30384c}
     body.dark-mode .repo-link.secondary{border-color:#394258;background:#151b2b;color:#c4ccda}
     @media(max-width:900px) and (min-width:761px){.github-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
