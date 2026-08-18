@@ -15,550 +15,37 @@
     rel="stylesheet"
   >
 
-  <style>
-
-    *{
-      box-sizing:border-box;
-    }
-
-    html,
-    body{
-      margin:0;
-      padding:0;
-    }
-
-    body{
-      font-family:"Manrope",Arial,sans-serif;
-      background:#f8f7f4;
-      color:#171717;
-      transition:background .25s ease,color .25s ease;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    img{
-      display:block;
-    }
-
-    .container{
-      width:min(1220px,92%);
-      margin:auto;
-    }
-
-
-    /* HEADER */
-
-    .home-header{
-      background:rgba(248,247,244,.96);
-      transition:background .25s ease;
-    }
-
-    .home-nav{
-      height:86px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:28px;
-    }
-
-    .home-brand{
-      display:flex;
-      align-items:center;
-      gap:7px;
-      font-size:17px;
-      font-weight:800;
-      letter-spacing:-.03em;
-    }
-
-    .home-brand span{
-      color:#6769dc;
-    }
-
-    .brand-dot{
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:#69ad6e;
-    }
-
-    .home-links{
-      display:flex;
-      align-items:center;
-      gap:30px;
-    }
-
-    .home-links a{
-      font-size:12px;
-      font-weight:500;
-      color:#4b4b4b;
-      transition:.2s ease;
-    }
-
-    .home-links a:hover,
-    .home-links a.active{
-      color:#6568df;
-    }
-
-    .theme-toggle{
-      width:39px;
-      height:39px;
-      border:1px solid #deddda;
-      border-radius:50%;
-      background:#fff;
-      color:#323232;
-      display:grid;
-      place-items:center;
-      cursor:pointer;
-      font-size:16px;
-      transition:.2s ease;
-    }
-
-
-    /* HERO */
-
-    .home-main{
-      min-height:calc(100vh - 86px);
-      display:flex;
-      align-items:center;
-      position:relative;
-      overflow:hidden;
-      background:
-        radial-gradient(circle at 82% 25%,rgba(105,105,220,.055),transparent 26%),
-        radial-gradient(circle at 12% 80%,rgba(105,105,220,.035),transparent 24%);
-    }
-
-    .home-main:before{
-      content:"";
-      position:absolute;
-      width:390px;
-      height:390px;
-      border-radius:50%;
-      border:1px solid rgba(103,105,220,.06);
-      right:4%;
-      top:12%;
-    }
-
-    .home-main:after{
-      content:"";
-      position:absolute;
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      border:1px solid rgba(103,105,220,.045);
-      left:4%;
-      bottom:8%;
-    }
-
-    .home-hero{
-      width:100%;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:64px;
-      align-items:center;
-      padding:42px 0 66px;
-      position:relative;
-      z-index:2;
-    }
-
-
-    /* LEFT */
-
-    .home-copy{
-      padding-left:4px;
-    }
-
-    .home-title{
-      margin:0;
-      display:flex;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:14px;
-
-      font-size:clamp(72px,7.4vw,108px);
-      line-height:.92;
-      letter-spacing:-.07em;
-      font-weight:800;
-    }
-
-    .home-title .im{
-      color:#161616;
-    }
-
-    .home-title .name-highlight{
-      display:inline-block;
-      padding:10px 28px 14px;
-      border-radius:72px;
-      background:#696ce0;
-      color:#fff;
-      font-weight:700;
-    }
-
-    .home-role{
-      margin:21px 0 0;
-      font-size:18px;
-      font-weight:500;
-      color:#2f2f2f;
-    }
-
-    .home-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:7px;
-      margin-top:16px;
-      max-width:610px;
-    }
-
-    .home-tag{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:7px 11px;
-      border-radius:999px;
-      border:1px solid #deddd8;
-      background:rgba(255,255,255,.74);
-      color:#444;
-      font-size:10px;
-      font-weight:500;
-    }
-
-    .home-about{
-      display:inline-flex;
-      align-items:center;
-      gap:16px;
-      margin-top:22px;
-      padding:10px 12px 10px 21px;
-      border-radius:16px;
-      background:#696ce0;
-      color:#fff;
-      font-size:12px;
-      font-weight:700;
-      box-shadow:0 12px 24px rgba(105,108,224,.15);
-      transition:.2s ease;
-    }
-
-    .home-about:hover{
-      transform:translateY(-2px);
-    }
-
-    .home-about-arrow{
-      width:37px;
-      height:37px;
-      border-radius:12px;
-      background:rgba(255,255,255,.13);
-      display:grid;
-      place-items:center;
-      font-size:18px;
-    }
-
-    .social-area{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      margin-top:22px;
-    }
-
-    .social-circles{
-      display:flex;
-      gap:11px;
-    }
-
-    .social-circle{
-      width:41px;
-      height:41px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      border:1px solid #aeb0df;
-      color:#5c62c8;
-      background:transparent;
-      font-size:10px;
-      font-weight:800;
-      transition:.2s ease;
-    }
-
-    .social-circle:hover{
-      background:#696ce0;
-      color:#fff;
-      border-color:#696ce0;
-    }
-
-    .social-line{
-      width:34px;
-      height:1px;
-      background:#858585;
-    }
-
-    .social-label{
-      font-size:9px;
-      font-weight:700;
-      letter-spacing:.23em;
-      color:#535353;
-    }
-
-
-    /* PHOTO */
-
-    .home-photo-side{
-      min-height:550px;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .photo-circle{
-      position:absolute;
-      width:455px;
-      height:455px;
-      border-radius:50%;
-      border:1px solid rgba(105,108,224,.08);
-    }
-
-    .photo-arch{
-      width:440px;
-      height:505px;
-      overflow:hidden;
-      border-radius:225px 225px 24px 24px;
-      background:#e6e6e4;
-      position:relative;
-      z-index:2;
-      transform:translateY(-12px);
-    }
-
-    .photo-arch img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center 24%;
-    }
-
-    .experience-circle{
-      position:absolute;
-      left:24px;
-      bottom:74px;
-
-      width:108px;
-      height:108px;
-
-      border-radius:50%;
-      background:#696ce0;
-      color:#fff;
-
-      display:grid;
-      place-items:center;
-
-      text-align:center;
-      z-index:4;
-
-      border:5px solid #f8f7f4;
-    }
-
-    .experience-circle strong{
-      display:block;
-      font-size:31px;
-      line-height:1;
-      font-weight:800;
-    }
-
-    .experience-circle span{
-      display:block;
-      margin-top:5px;
-      font-size:8px;
-      line-height:1.25;
-      font-weight:500;
-    }
-
-
-    /* DARK MODE */
-
-    body.dark-mode{
-      background:#101116;
-      color:#fff;
-    }
-
-    body.dark-mode .home-header{
-      background:#101116;
-    }
-
-    body.dark-mode .home-main{
-      background-color:#101116;
-
-      background-image:
-        radial-gradient(circle at 12% 18%,rgba(255,255,255,.35) 0 1px,transparent 1.4px),
-        radial-gradient(circle at 34% 68%,rgba(255,255,255,.18) 0 1px,transparent 1.4px),
-        radial-gradient(circle at 68% 16%,rgba(255,255,255,.16) 0 1px,transparent 1.4px),
-        radial-gradient(circle at 87% 74%,rgba(255,255,255,.14) 0 1px,transparent 1.4px),
-        radial-gradient(circle at 82% 25%,rgba(105,108,224,.10),transparent 28%);
-    }
-
-    body.dark-mode .home-main:before,
-    body.dark-mode .home-main:after,
-    body.dark-mode .photo-circle{
-      border-color:rgba(137,140,255,.07);
-    }
-
-    body.dark-mode .home-brand{
-      color:#fff;
-    }
-
-    body.dark-mode .home-brand span{
-      color:#8386ff;
-    }
-
-    body.dark-mode .home-links a{
-      color:#b7b8c0;
-    }
-
-    body.dark-mode .home-links a:hover,
-    body.dark-mode .home-links a.active{
-      color:#fff;
-    }
-
-    body.dark-mode .theme-toggle{
-      background:#181920;
-      border-color:#30313a;
-      color:#fff;
-    }
-
-    body.dark-mode .home-title .im{
-      color:#fff;
-    }
-
-    body.dark-mode .home-role{
-      color:#dedee4;
-    }
-
-    body.dark-mode .home-tag{
-      background:#171820;
-      border-color:#2d2f39;
-      color:#d0d2da;
-    }
-
-    body.dark-mode .social-label{
-      color:#c3c4cb;
-    }
-
-    body.dark-mode .social-line{
-      background:#676872;
-    }
-
-    body.dark-mode .social-circle{
-      border-color:#666aa5;
-      color:#8b91ff;
-    }
-
-    body.dark-mode .experience-circle{
-      border-color:#101116;
-    }
-
-    body.dark-mode .photo-arch{
-      background:#1b1c22;
-    }
-
-
-    /* RESPONSIVE */
-
-    @media(max-width:980px){
-
-      .home-hero{
-        grid-template-columns:1fr;
-        gap:42px;
-      }
-
-      .home-copy{
-        text-align:center;
-      }
-
-      .home-title,
-      .home-tags,
-      .social-area{
-        justify-content:center;
-      }
-
-      .home-photo-side{
-        margin-top:20px;
-      }
-
-    }
-
-    @media(max-width:650px){
-
-      .home-nav{
-        height:72px;
-      }
-
-      .home-links{
-        gap:14px;
-      }
-
-      .home-links a:nth-child(2),
-      .home-links a:nth-child(3),
-      .home-links a:nth-child(4){
-        display:none;
-      }
-
-      .home-title{
-        font-size:58px;
-        gap:10px;
-      }
-
-      .home-title .name-highlight{
-        padding:9px 21px 12px;
-      }
-
-      .home-role{
-        font-size:16px;
-      }
-
-      .home-photo-side{
-        min-height:455px;
-      }
-
-      .photo-circle{
-        width:350px;
-        height:350px;
-      }
-
-      .photo-arch{
-        width:320px;
-        height:410px;
-      }
-
-      .experience-circle{
-        width:94px;
-        height:94px;
-        left:2px;
-        bottom:40px;
-      }
-
-      .experience-circle strong{
-        font-size:27px;
-      }
-
-    }
-
-  </style>
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+
+<body class="home-page">
 
 
 <header class="home-header">
 
   <div class="container home-nav">
 
+
+    <!-- LEFT: NAME -->
+
     <a class="home-brand" href="index.html">
 
-      Lavanya
-      <span>Gaddam</span>
-      <i class="brand-dot"></i>
+      <span class="brand-first">
+        Lavanya
+      </span>
+
+      <span class="brand-last">
+        Gaddam
+      </span>
+
+      <span class="brand-dot"></span>
 
     </a>
 
+
+
+    <!-- CENTER: NAVIGATION -->
 
     <nav class="home-links">
 
@@ -582,16 +69,21 @@
         Contact
       </a>
 
-      <button
-        class="theme-toggle"
-        id="themeToggle"
-        type="button"
-        aria-label="Switch theme"
-      >
-        ☾
-      </button>
-
     </nav>
+
+
+
+    <!-- RIGHT: THEME -->
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Switch light or dark theme"
+    >
+      ☾
+    </button>
+
 
   </div>
 
@@ -601,8 +93,35 @@
 
 <main class="home-main">
 
+
+  <!--
+    These are hidden in light mode.
+    Later, styles.css will make them visible
+    and animated only in dark mode.
+  -->
+
+  <div class="space-effects" aria-hidden="true">
+
+    <div class="stars stars-one"></div>
+
+    <div class="stars stars-two"></div>
+
+    <div class="rocket rocket-one">
+      🚀
+    </div>
+
+    <div class="rocket rocket-two">
+      🚀
+    </div>
+
+  </div>
+
+
+
   <div class="container home-hero">
 
+
+    <!-- LEFT SIDE -->
 
     <section class="home-copy">
 
@@ -620,30 +139,38 @@
       </h1>
 
 
+
       <p class="home-role">
         Data Engineer
       </p>
 
 
+
       <div class="home-tags">
+
 
         <span class="home-tag">
           📍 Tampa, FL
         </span>
 
+
         <span class="home-tag">
           💼 Data Engineer
         </span>
+
 
         <span class="home-tag">
           🎓 MS in Computer Science
         </span>
 
+
         <span class="home-tag">
           💻 Python · PySpark · Azure · AWS
         </span>
 
+
       </div>
+
 
 
       <a
@@ -651,7 +178,9 @@
         href="about.html"
       >
 
-        About Me
+        <span>
+          About Me
+        </span>
 
         <span class="home-about-arrow">
           ↗
@@ -660,43 +189,54 @@
       </a>
 
 
+
+      <!-- SOCIAL / CONTACT -->
+
       <div class="social-area">
 
 
         <div class="social-circles">
 
+
           <a
-            class="social-circle"
+            class="social-circle linkedin"
             href="https://www.linkedin.com/in/lavanyagaddam05"
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn"
+            title="LinkedIn"
           >
             in
           </a>
 
+
           <a
-            class="social-circle"
+            class="social-circle github"
             href="https://github.com/glavanya0110-spec"
             target="_blank"
             rel="noopener"
             aria-label="GitHub"
+            title="GitHub"
           >
             GH
           </a>
 
+
           <a
-            class="social-circle"
+            class="social-circle phone"
             href="tel:+16562155913"
-            aria-label="Phone"
+            aria-label="Call Lavanya"
+            title="+1 (656) 215-5913"
           >
             ☎
           </a>
+
 
         </div>
 
 
         <span class="social-line"></span>
+
 
         <span class="social-label">
           FIND ME ON
@@ -709,6 +249,8 @@
     </section>
 
 
+
+    <!-- RIGHT SIDE -->
 
     <section class="home-photo-side">
 
@@ -724,6 +266,7 @@
         >
 
       </div>
+
 
 
       <div class="experience-circle">
@@ -749,6 +292,7 @@
 
   </div>
 
+
 </main>
 
 
@@ -758,11 +302,12 @@
   const themeToggle =
     document.getElementById("themeToggle");
 
+
   const savedTheme =
     localStorage.getItem("portfolio-theme");
 
 
-  if(savedTheme === "dark"){
+  if (savedTheme === "dark") {
 
     document.body.classList.add("dark-mode");
 
@@ -775,11 +320,14 @@
 
     document.body.classList.toggle("dark-mode");
 
+
     const isDark =
       document.body.classList.contains("dark-mode");
 
+
     themeToggle.textContent =
       isDark ? "☀" : "☾";
+
 
     localStorage.setItem(
       "portfolio-theme",
