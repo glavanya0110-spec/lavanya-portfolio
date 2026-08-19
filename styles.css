@@ -314,7 +314,12 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
     radial-gradient(circle at 59% 14%, #fff 0 .65px, transparent 1.1px),
     radial-gradient(circle at 72% 61%, #fff 0 1.25px, transparent 1.7px),
     radial-gradient(circle at 87% 29%, #fff 0 .9px, transparent 1.35px),
-    radial-gradient(circle at 95% 82%, #fff 0 .65px, transparent 1.1px) !important;
+    radial-gradient(circle at 95% 82%, #fff 0 .65px, transparent 1.1px),
+    radial-gradient(circle at 4% 58%, #fff 0 .7px, transparent 1.15px),
+    radial-gradient(circle at 37% 7%, #fff 0 .9px, transparent 1.35px),
+    radial-gradient(circle at 51% 54%, #fff 0 .65px, transparent 1.1px),
+    radial-gradient(circle at 77% 93%, #fff 0 1px, transparent 1.45px),
+    radial-gradient(circle at 91% 68%, #fff 0 .7px, transparent 1.15px) !important;
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
   animation: starTwinkleA 2.15s ease-in-out infinite !important;
@@ -331,7 +336,12 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
     radial-gradient(circle at 54% 43%, #fff 0 1.4px, transparent 1.9px),
     radial-gradient(circle at 68% 92%, #fff 0 .75px, transparent 1.2px),
     radial-gradient(circle at 81% 11%, #fff 0 1px, transparent 1.45px),
-    radial-gradient(circle at 92% 55%, #dff4ff 0 .65px, transparent 1.1px) !important;
+    radial-gradient(circle at 92% 55%, #dff4ff 0 .65px, transparent 1.1px),
+    radial-gradient(circle at 6% 34%, #fff 0 .65px, transparent 1.1px),
+    radial-gradient(circle at 32% 82%, #fff 0 .85px, transparent 1.3px),
+    radial-gradient(circle at 62% 25%, #dff4ff 0 .7px, transparent 1.15px),
+    radial-gradient(circle at 74% 49%, #fff 0 1.05px, transparent 1.5px),
+    radial-gradient(circle at 98% 16%, #fff 0 .65px, transparent 1.1px) !important;
   animation: starTwinkleB 3.1s ease-in-out -1.35s infinite !important;
 }
 
@@ -347,7 +357,11 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
     radial-gradient(circle at 64% 34%, #fff 0 1.25px, transparent 2px),
     radial-gradient(circle at 76% 86%, #fff 0 .9px, transparent 1.65px),
     radial-gradient(circle at 89% 48%, #fff 0 1.15px, transparent 1.85px),
-    radial-gradient(circle at 98% 7%, #fff 0 .8px, transparent 1.5px) !important;
+    radial-gradient(circle at 98% 7%, #fff 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 9% 66%, #fff 0 .65px, transparent 1.1px),
+    radial-gradient(circle at 36% 51%, #fff 0 .8px, transparent 1.25px),
+    radial-gradient(circle at 57% 91%, #fff 0 .7px, transparent 1.15px),
+    radial-gradient(circle at 82% 5%, #fff 0 .9px, transparent 1.35px) !important;
   animation: starTwinkleC 2.7s ease-in-out -.7s infinite !important;
 }
 
@@ -362,77 +376,87 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
     radial-gradient(circle at 61% 97%, #fff 0 1.05px, transparent 1.75px),
     radial-gradient(circle at 70% 20%, #fff 0 .8px, transparent 1.5px),
     radial-gradient(circle at 83% 69%, #fff 0 1.3px, transparent 2px),
-    radial-gradient(circle at 94% 39%, #fff 0 .85px, transparent 1.55px) !important;
+    radial-gradient(circle at 94% 39%, #fff 0 .85px, transparent 1.55px),
+    radial-gradient(circle at 13% 12%, #fff 0 .65px, transparent 1.1px),
+    radial-gradient(circle at 43% 77%, #fff 0 .85px, transparent 1.3px),
+    radial-gradient(circle at 66% 58%, #fff 0 .7px, transparent 1.15px),
+    radial-gradient(circle at 91% 96%, #fff 0 .95px, transparent 1.4px) !important;
   animation: starTwinkleD 3.65s ease-in-out -1.95s infinite !important;
 }
 
 @keyframes starTwinkleA {
-  0%, 100% { opacity: .32; filter: brightness(.9); }
-  18%      { opacity: .9; filter: brightness(1.35); }
-  33%      { opacity: .42; filter: brightness(1); }
-  57%      { opacity: .68; filter: brightness(1.15); }
-  74%      { opacity: .36; filter: brightness(.95); }
-  88%      { opacity: 1; filter: brightness(1.55); }
+  0%, 100% { opacity: .12; filter: brightness(.72); }
+  15%      { opacity: .34; filter: brightness(.9); }
+  21%      { opacity: 1; filter: brightness(2.1) drop-shadow(0 0 2px rgba(225,242,255,.8)); }
+  27%      { opacity: .28; filter: brightness(.85); }
+  58%      { opacity: .62; filter: brightness(1.16); }
+  82%      { opacity: .2; filter: brightness(.8); }
+  88%      { opacity: 1; filter: brightness(2.25) drop-shadow(0 0 2px rgba(255,255,255,.9)); }
+  94%      { opacity: .3; filter: brightness(.88); }
 }
 
 @keyframes starTwinkleB {
-  0%, 100% { opacity: .38; filter: brightness(1); }
-  14%      { opacity: .56; filter: brightness(1.08); }
-  29%      { opacity: .28; filter: brightness(.82); }
-  46%      { opacity: 1; filter: brightness(1.5); }
-  63%      { opacity: .44; filter: brightness(1); }
-  81%      { opacity: .8; filter: brightness(1.25); }
+  0%, 100% { opacity: .18; filter: brightness(.76); }
+  12%      { opacity: .5; filter: brightness(1); }
+  32%      { opacity: .14; filter: brightness(.7); }
+  43%      { opacity: .35; filter: brightness(.9); }
+  48%      { opacity: 1; filter: brightness(2.2) drop-shadow(0 0 2px rgba(230,245,255,.85)); }
+  54%      { opacity: .26; filter: brightness(.82); }
+  77%      { opacity: .68; filter: brightness(1.2); }
+  86%      { opacity: .22; filter: brightness(.8); }
 }
 
 @keyframes starTwinkleC {
-  0%, 100% { opacity: .28; filter: brightness(.86); }
-  20%      { opacity: .62; filter: brightness(1.12); }
-  39%      { opacity: .32; filter: brightness(.95); }
-  58%      { opacity: 1; filter: brightness(1.52); }
-  76%      { opacity: .44; filter: brightness(1); }
-  91%      { opacity: .78; filter: brightness(1.22); }
+  0%, 100% { opacity: .14; filter: brightness(.72); }
+  18%      { opacity: .55; filter: brightness(1.08); }
+  37%      { opacity: .18; filter: brightness(.76); }
+  55%      { opacity: .4; filter: brightness(.92); }
+  60%      { opacity: 1; filter: brightness(2.25) drop-shadow(0 0 2px rgba(255,255,255,.9)); }
+  66%      { opacity: .25; filter: brightness(.8); }
+  84%      { opacity: .62; filter: brightness(1.14); }
 }
 
 @keyframes starTwinkleD {
-  0%, 100% { opacity: .3; filter: brightness(.9); }
-  16%      { opacity: .88; filter: brightness(1.32); }
-  35%      { opacity: .3; filter: brightness(.82); }
-  54%      { opacity: .66; filter: brightness(1.12); }
-  73%      { opacity: .38; filter: brightness(.96); }
-  89%      { opacity: 1; filter: brightness(1.5); }
+  0%, 100% { opacity: .2; filter: brightness(.8); }
+  13%      { opacity: .42; filter: brightness(.94); }
+  18%      { opacity: 1; filter: brightness(2.15) drop-shadow(0 0 2px rgba(225,242,255,.86)); }
+  24%      { opacity: .22; filter: brightness(.78); }
+  51%      { opacity: .7; filter: brightness(1.22); }
+  70%      { opacity: .16; filter: brightness(.72); }
+  86%      { opacity: .52; filter: brightness(1.02); }
 }
 
 /* Small illustrated space rocket, matching the soft purple reference style. */
 .rocket-art {
   position: relative;
   display: block;
-  width: 27px;
-  height: 28px;
-  clip-path: polygon(50% 0, 100% 78%, 67% 67%, 50% 100%, 33% 67%, 0 78%);
-  background: linear-gradient(90deg, #7376ef 0 31%, #eef6ff 32% 68%, #8c76f0 69% 100%);
-  filter: drop-shadow(0 0 4px rgba(133, 139, 255, .55));
+  width: 18px;
+  height: 35px;
+  clip-path: polygon(50% 0, 91% 68%, 66% 62%, 50% 100%, 34% 62%, 9% 68%);
+  background: linear-gradient(90deg, #666cf2 0 32%, #ffffff 33% 67%, #8a70f2 68% 100%);
+  filter: brightness(1.28) drop-shadow(0 0 3px rgba(142, 150, 255, .8));
 }
 
 .rocket-art::before {
   content: "";
   position: absolute;
-  left: 10px;
-  top: 18px;
-  width: 7px;
-  height: 12px;
+  left: 6px;
+  top: 25px;
+  width: 6px;
+  height: 16px;
   clip-path: polygon(50% 100%, 0 0, 100% 0);
-  background: linear-gradient(#ffb44d, #ff6c4a 55%, transparent);
-  filter: drop-shadow(0 2px 2px rgba(255,120,74,.55));
+  background: linear-gradient(#fff09a 0%, #ffad32 32%, #ff642f 68%, transparent 100%);
+  filter: brightness(1.25) drop-shadow(0 2px 3px rgba(255,112,42,.9));
   animation: rocketFlame .8s ease-in-out infinite alternate;
 }
 
 .rocket-art::after {
   content: "";
   position: absolute;
-  left: 10px;
-  top: 8px;
-  width: 5px;
-  height: 5px;
+  left: 6px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: #69dcff;
   border: 1px solid rgba(255,255,255,.95);
