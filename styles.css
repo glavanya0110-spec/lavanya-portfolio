@@ -314,7 +314,7 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
     radial-gradient(circle at 95% 82%, #fff 0 .85px, transparent 1.5px) !important;
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
-  animation: starTwinkleA 4.8s ease-in-out infinite !important;
+  animation: starTwinkleA 2.6s ease-in-out infinite !important;
   will-change: opacity, filter;
 }
 
@@ -329,7 +329,38 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
     radial-gradient(circle at 68% 92%, #fff 0 .85px, transparent 1.5px),
     radial-gradient(circle at 81% 11%, #fff 0 1.1px, transparent 1.8px),
     radial-gradient(circle at 92% 55%, #fff 0 .8px, transparent 1.5px) !important;
-  animation: starTwinkleB 6.2s ease-in-out -2.7s infinite !important;
+  animation: starTwinkleB 3.8s ease-in-out -1.6s infinite !important;
+}
+
+.dark-mode .stars-three,
+.about-page.dark-mode .stars-three,
+.portfolio-body.dark-mode .portfolio-stars.three {
+  background-image:
+    radial-gradient(circle at 4% 46%, #fff 0 .9px, transparent 1.65px),
+    radial-gradient(circle at 15% 27%, #fff 0 1.2px, transparent 1.9px),
+    radial-gradient(circle at 28% 95%, #fff 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 41% 18%, #fff 0 1.05px, transparent 1.8px),
+    radial-gradient(circle at 52% 72%, #fff 0 .85px, transparent 1.55px),
+    radial-gradient(circle at 64% 34%, #fff 0 1.25px, transparent 2px),
+    radial-gradient(circle at 76% 86%, #fff 0 .9px, transparent 1.65px),
+    radial-gradient(circle at 89% 48%, #fff 0 1.15px, transparent 1.85px),
+    radial-gradient(circle at 98% 7%, #fff 0 .8px, transparent 1.5px) !important;
+  animation: starTwinkleC 3.15s ease-in-out -.85s infinite !important;
+}
+
+.dark-mode .stars-four,
+.about-page.dark-mode .stars-four,
+.portfolio-body.dark-mode .portfolio-stars.four {
+  background-image:
+    radial-gradient(circle at 2% 79%, #fff 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 21% 43%, #fff 0 .75px, transparent 1.45px),
+    radial-gradient(circle at 34% 6%, #fff 0 1.25px, transparent 2px),
+    radial-gradient(circle at 48% 55%, #fff 0 .9px, transparent 1.65px),
+    radial-gradient(circle at 61% 97%, #fff 0 1.05px, transparent 1.75px),
+    radial-gradient(circle at 70% 20%, #fff 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 83% 69%, #fff 0 1.3px, transparent 2px),
+    radial-gradient(circle at 94% 39%, #fff 0 .85px, transparent 1.55px) !important;
+  animation: starTwinkleD 4.35s ease-in-out -2.2s infinite !important;
 }
 
 @keyframes starTwinkleA {
@@ -348,6 +379,24 @@ button, a { transition: color .2s ease, background-color .2s ease, border-color 
   46%      { opacity: 1; filter: brightness(3) drop-shadow(0 0 9px rgba(255,255,255,1)); }
   63%      { opacity: .42; filter: brightness(1.15) drop-shadow(0 0 2px rgba(255,255,255,.35)); }
   81%      { opacity: .82; filter: brightness(2.25) drop-shadow(0 0 7px rgba(210,235,255,.90)); }
+}
+
+@keyframes starTwinkleC {
+  0%, 100% { opacity: .18; filter: brightness(.8) drop-shadow(0 0 1px rgba(255,255,255,.18)); }
+  20%      { opacity: .62; filter: brightness(1.7) drop-shadow(0 0 5px rgba(205,232,255,.72)); }
+  39%      { opacity: .30; filter: brightness(.95) drop-shadow(0 0 1px rgba(255,255,255,.25)); }
+  58%      { opacity: 1; filter: brightness(3.2) drop-shadow(0 0 10px rgba(255,255,255,1)); }
+  76%      { opacity: .42; filter: brightness(1.15) drop-shadow(0 0 2px rgba(255,255,255,.35)); }
+  91%      { opacity: .80; filter: brightness(2.2) drop-shadow(0 0 7px rgba(215,238,255,.9)); }
+}
+
+@keyframes starTwinkleD {
+  0%, 100% { opacity: .28; filter: brightness(.9) drop-shadow(0 0 1px rgba(255,255,255,.2)); }
+  16%      { opacity: .90; filter: brightness(2.6) drop-shadow(0 0 8px rgba(235,245,255,.95)); }
+  35%      { opacity: .24; filter: brightness(.75) drop-shadow(0 0 0 rgba(255,255,255,0)); }
+  54%      { opacity: .68; filter: brightness(1.75) drop-shadow(0 0 5px rgba(200,228,255,.75)); }
+  73%      { opacity: .36; filter: brightness(1) drop-shadow(0 0 2px rgba(255,255,255,.3)); }
+  89%      { opacity: 1; filter: brightness(3.1) drop-shadow(0 0 10px rgba(255,255,255,1)); }
 }
 
 /* Rockets move only with the dark/night theme. */
@@ -564,5 +613,30 @@ img { max-width: 100%; }
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+  }
+
+  /* The user intentionally requested the decorative star twinkle. */
+  .dark-mode .stars,
+  .about-page.dark-mode .about-stars,
+  .portfolio-body.dark-mode .portfolio-stars {
+    animation: starTwinkleA 2.6s ease-in-out infinite !important;
+  }
+
+  .dark-mode .stars-two,
+  .about-page.dark-mode .stars-two,
+  .portfolio-body.dark-mode .portfolio-stars.two {
+    animation: starTwinkleB 3.8s ease-in-out -1.6s infinite !important;
+  }
+
+  .dark-mode .stars-three,
+  .about-page.dark-mode .stars-three,
+  .portfolio-body.dark-mode .portfolio-stars.three {
+    animation: starTwinkleC 3.15s ease-in-out -.85s infinite !important;
+  }
+
+  .dark-mode .stars-four,
+  .about-page.dark-mode .stars-four,
+  .portfolio-body.dark-mode .portfolio-stars.four {
+    animation: starTwinkleD 4.35s ease-in-out -2.2s infinite !important;
   }
 }
