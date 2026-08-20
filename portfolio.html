@@ -286,7 +286,7 @@
         <div class="repo-content">
           <div class="repo-meta">
             <span class="repo-language">${safe(repo.language||"Data Engineering")}</span>
-            ${repo.planned?'<span class="repo-status">IN PROGRESS</span>':'<span class="repo-status live">LIVE GITHUB PROJECT</span>'}
+            ${repo.planned?'':'<span class="repo-status live">LIVE GITHUB PROJECT</span>'}
           </div>
           <div class="repo-kicker">${safe(subtitle)}</div>
           <h3>${safe(title)}</h3>
@@ -296,7 +296,7 @@
           <div class="repo-footer">
             <div class="repo-stats"><span>★ ${repo.stargazers_count||0}</span><span>⑂ ${repo.forks_count||0}</span></div>
             <div class="repo-actions">
-              ${repo.planned?'<span class="repo-link secondary">Coming soon</span>':`<a class="repo-link secondary" href="${safe(repo.html_url)}#readme" target="_blank" rel="noopener">README</a><a class="repo-link" href="${safe(repo.html_url)}" target="_blank" rel="noopener">GitHub ↗</a>`}
+              ${repo.planned?'':`<a class="repo-link secondary" href="${safe(repo.html_url)}#readme" target="_blank" rel="noopener">README</a><a class="repo-link" href="${safe(repo.html_url)}" target="_blank" rel="noopener">GitHub ↗</a>`}
               ${homepage?`<a class="repo-link" href="${safe(homepage)}" target="_blank" rel="noopener">Live ↗</a>`:""}
             </div>
           </div>
